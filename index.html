@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="shortcut icon"
-      href="./resources/favicon.png"
+      href="./resources/favicon.ico"
       type="image/x-icon"
     />
     <title>Aditya More | QA Portfolio</title>
@@ -18,9 +18,10 @@
         scroll-behavior: smooth;
       }
 
-      /* Adjust top margin to account for fixed navbar */
-      #home {
-        margin-top: 80px;
+      /* Prevent anchored sections from being hidden under fixed navbar */
+      /* Adjust 72px if your navbar height changes */
+      section {
+        scroll-margin-top: 72px;
       }
     </style>
   </head>
@@ -30,45 +31,74 @@
          NAVBAR
     ======================== -->
     <nav
-      class="fixed top-0 w-full z-50 bg-gray-900/80 backdrop-blur-md text-cyan-400 border-b border-cyan-900/40 shadow-[0_2px_15px_rgba(34,211,238,0.1)]"
+      class="fixed top-0 w-full z-50 bg-gray-900/50 backdrop-blur-sm border-b border-cyan-900/20 shadow-[0_2px_12px_rgba(2,6,23,0.25)] transition-all duration-300"
     >
       <div
-        class="container mx-auto flex justify-between items-center py-4 px-6"
+        class="container mx-auto flex justify-between items-center py-3 px-6"
       >
+        <!-- Logo -->
         <h1
-          class="text-2xl font-extrabold tracking-wide bg-gradient-to-r from-cyan-400 to-blue-300 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300"
+          class="text-2xl font-extrabold tracking-wide bg-gradient-to-r from-cyan-400 to-blue-300 bg-clip-text text-transparent"
         >
           Aditya More
         </h1>
 
-        <ul class="flex space-x-8 text-lg font-medium">
+        <!-- Hamburger (mobile) -->
+        <button
+          id="menu-btn"
+          class="block md:hidden text-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-300 rounded"
+          aria-expanded="false"
+          aria-controls="mobile-panel"
+          aria-label="Toggle navigation"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-7 w-7"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+
+        <!-- Menu -->
+        <ul
+          id="menu"
+          class="hidden md:flex md:space-x-8 text-lg font-medium items-center md:justify-end"
+        >
           <li>
-            <a href="#home" class="relative group transition">
-              Home
+            <a href="#home" class="relative group px-2 py-1"
+              >Home
               <span
                 class="absolute left-0 -bottom-1 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full"
               ></span>
             </a>
           </li>
           <li>
-            <a href="#skills" class="relative group transition">
-              Skills
+            <a href="#core-competencies" class="relative group px-2 py-1"
+              >Skills
               <span
                 class="absolute left-0 -bottom-1 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full"
               ></span>
             </a>
           </li>
           <li>
-            <a href="#projects" class="relative group transition">
-              Projects
+            <a href="#projects" class="relative group px-2 py-1"
+              >Projects
               <span
                 class="absolute left-0 -bottom-1 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full"
               ></span>
             </a>
           </li>
           <li>
-            <a href="#contact" class="relative group transition">
-              Contact
+            <a href="#contact" class="relative group px-2 py-1"
+              >Contact
               <span
                 class="absolute left-0 -bottom-1 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full"
               ></span>
@@ -76,6 +106,73 @@
           </li>
         </ul>
       </div>
+
+      <!-- Mobile panel (will be toggled visible) -->
+      <div
+        id="mobile-panel"
+        class="hidden md:hidden fixed left-4 right-4 top-16 z-40 rounded-xl bg-gray-900/60 backdrop-blur-sm border border-cyan-900/10 shadow-lg py-6"
+      >
+        <ul class="flex flex-col items-center gap-6">
+          <li>
+            <a href="#home" class="text-lg font-medium" data-close>Home</a>
+          </li>
+          <li>
+            <a href="#core-competencies" class="text-lg font-medium" data-close
+              >Skills</a
+            >
+          </li>
+          <li>
+            <a href="#projects" class="text-lg font-medium" data-close
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a href="#contact" class="text-lg font-medium" data-close
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <script>
+        (function () {
+          const menuBtn = document.getElementById("menu-btn");
+          const desktopMenu = document.getElementById("menu");
+          const mobilePanel = document.getElementById("mobile-panel");
+
+          // Toggle mobile panel (do NOT change icon)
+          menuBtn.addEventListener("click", () => {
+            const open = !mobilePanel.classList.contains("hidden");
+            if (open) {
+              // close
+              mobilePanel.classList.add("hidden");
+              menuBtn.setAttribute("aria-expanded", "false");
+            } else {
+              // open
+              mobilePanel.classList.remove("hidden");
+              menuBtn.setAttribute("aria-expanded", "true");
+            }
+          });
+
+          // Close mobile panel when clicking any mobile link
+          document.querySelectorAll("[data-close]").forEach((el) => {
+            el.addEventListener("click", () => {
+              if (window.innerWidth < 768) {
+                mobilePanel.classList.add("hidden");
+                menuBtn.setAttribute("aria-expanded", "false");
+              }
+            });
+          });
+
+          // Ensure desktop menu shows/hides correctly on resize
+          window.addEventListener("resize", () => {
+            if (window.innerWidth >= 768) {
+              mobilePanel.classList.add("hidden");
+              menuBtn.setAttribute("aria-expanded", "false");
+            }
+          });
+        })();
+      </script>
     </nav>
 
     <!-- =======================
@@ -85,43 +182,49 @@
       id="home"
       class="min-h-screen flex flex-col justify-center items-center text-center px-6"
     >
+      <!-- Availability Badge -->
       <div class="mb-6 flex justify-center">
         <div
-          class="relative inline-flex items-center px-3 py-1 rounded-full border border-cyan-400 text-cyan-100 bg-transparent transition-all duration-300 shadow-[0_0_6px_rgba(34,211,238,0.7)]"
+          class="relative inline-flex items-center px-2.5 py-1 rounded-full border border-cyan-400 text-cyan-100 bg-gray-900/40 backdrop-blur-md transition-all duration-300"
           title="Available for New Opportunities"
           aria-label="Available for New Opportunities"
         >
           <span class="absolute left-3 flex items-center">
             <span
-              class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-cyan-400 opacity-60"
+              class="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-cyan-400 opacity-60"
             ></span>
             <span
-              class="relative inline-flex h-3 w-3 rounded-full bg-cyan-400"
+              class="relative inline-flex h-2 w-2 rounded-full bg-cyan-400"
             ></span>
           </span>
-          <span class="font-medium text-xs md:text-base ml-5"
-            >Available for New Opportunities</span
-          >
+          <span class="font-medium text-[10px] sm:text-xs md:text-sm ml-5">
+            Available for New Opportunities
+          </span>
         </div>
       </div>
 
+      <!-- Hero Heading -->
       <h2
-        class="text-4xl md:text-5xl font-bold text-cyan-400 mb-4 animate-bounce"
+        class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-cyan-400 mb-3 md:mb-4 animate-bounce"
       >
         Hi, I'm Aditya More 👋
       </h2>
 
-      <p class="text-lg md:text-xl text-gray-300 max-w-2xl">
+      <!-- Description -->
+      <p
+        class="text-sm sm:text-base md:text-xl text-gray-300 max-w-xl sm:max-w-2xl leading-relaxed"
+      >
         QA Engineer passionate about
         <span class="text-cyan-400">Manual, Automation, and API Testing</span>.
         Focused on improving software quality, performance, and user
         satisfaction.
       </p>
 
-      <div class="mt-8 flex flex-wrap justify-center gap-5">
+      <!-- Buttons -->
+      <div class="mt-8 flex flex-wrap justify-center gap-4 sm:gap-5">
         <a
           href="#contact"
-          class="group relative overflow-hidden rounded-full px-8 py-2.5 font-semibold text-black transition-all duration-300 bg-cyan-500 hover:bg-cyan-600 hover:shadow-[0_0_20px_rgba(34,211,238,0.7)]"
+          class="group relative overflow-hidden rounded-full px-6 sm:px-8 py-2.5 font-semibold text-black transition-all duration-300 bg-cyan-500 hover:bg-cyan-600 hover:shadow-[0_0_20px_rgba(34,211,238,0.7)]"
         >
           <span class="relative z-10">Contact Me</span>
           <span
@@ -130,9 +233,9 @@
         </a>
 
         <a
-          href="./resources/Aditya_More_ST.pdf"
+          href="./resources/Aditya_More_QA.pdf"
           download
-          class="group relative overflow-hidden rounded-full border border-cyan-400 px-8 py-2.5 font-semibold text-cyan-400 transition-all duration-300 hover:text-black hover:border-transparent hover:shadow-[0_0_25px_rgba(34,211,238,0.6)]"
+          class="group relative overflow-hidden rounded-full border border-cyan-400 px-6 sm:px-8 py-2.5 font-semibold text-cyan-400 transition-all duration-300 hover:text-black hover:border-transparent hover:shadow-[0_0_25px_rgba(34,211,238,0.6)]"
         >
           <span class="relative z-10">Download Resume</span>
           <span
@@ -143,12 +246,17 @@
     </section>
 
     <!-- =======================
-         CORE COMPETENCIES
-    ======================== -->
+     CORE COMPETENCIES
+  ======================== -->
     <section
       id="core-competencies"
       class="py-24 bg-gray-900 text-center relative overflow-hidden"
     >
+      <!-- Fade transition to next section -->
+      <div
+        class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-gray-900/90 pointer-events-none"
+      ></div>
+
       <h3
         id="competencies-title"
         class="text-4xl font-bold text-cyan-400 mb-16 opacity-0 translate-y-4 transition-all duration-700 text-center"
@@ -163,8 +271,8 @@
     </section>
 
     <!-- =======================
-         TECH STACK
-    ======================== -->
+     TECH STACK
+  ========================= -->
     <section
       id="tech-stack"
       class="py-20 bg-gray-900 text-center relative overflow-hidden"
@@ -306,7 +414,6 @@
     <!-- =======================
          CERTIFICATIONS
     ======================== -->
-    <!-- /sections/certificates.html -->
     <section id="certificates" class="py-24 bg-gray-900 text-center">
       <h3 class="text-4xl font-bold text-cyan-400 mb-12">Certifications</h3>
 
@@ -769,36 +876,41 @@
 
           const skillsData = await skillsRes.json();
 
-          // === Core Competencies ===
+          /* ========================
+     CORE COMPETENCIES
+  ========================= */
           const compContainer = document.getElementById(
             "competencies-container"
           );
           const compTitle = document.getElementById("competencies-title");
           compContainer.innerHTML = "";
 
-          skillsData.coreCompetencies.forEach((section) => {
+          skillsData.coreCompetencies.forEach((section, index) => {
             const card = document.createElement("div");
             card.className =
-              "bg-gray-800 border border-gray-700 rounded-xl p-6 text-left transition-all duration-300 hover:scale-105 hover:shadow-[0_0_18px_rgba(34,211,238,0.4)]";
+              "backdrop-blur-md bg-gray-800/40 border border-gray-700/50 rounded-2xl p-6 text-left transition-all duration-300 hover:scale-105 hover:bg-gray-800/60 shadow-[0_4px_25px_rgba(0,0,0,0.2)]";
+
+            card.style.transitionDelay = `${index * 0.1}s`;
+
             card.innerHTML = `
-              <h4 class="text-xl font-semibold text-cyan-300 mb-3 text-center">${
-                section.category
-              }</h4>
-              <ul class="text-gray-300 text-base space-y-2 ml-4">
-                ${section.items
-                  .map(
-                    (i) => `
-                    <li class="flex items-center gap-2">
-                      <span class="inline-block w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_6px_rgba(34,211,238,0.7)]"></span>
-                      ${i}
-                    </li>`
-                  )
-                  .join("")}
-              </ul>`;
+  <h4 class="text-lg font-semibold text-cyan-300 mb-4 text-center">
+    ${section.category}
+  </h4>
+  <ul class="text-gray-300 text-base space-y-2 pl-5 list-none">
+    ${section.items
+      .map(
+        (i) => `
+        <li class="flex items-start gap-2">
+          <span class="inline-block w-1.5 h-1.5 mt-2 rounded-full bg-cyan-400/80"></span>
+          <span class="leading-relaxed">${i}</span>
+        </li>`
+      )
+      .join("")}
+  </ul>`;
             compContainer.appendChild(card);
           });
 
-          // === Fade-in effect for Core Competencies ===
+          // Fade-in effect for section and cards
           const observer = new IntersectionObserver(
             (entries) => {
               entries.forEach((entry) => {
@@ -813,19 +925,30 @@
 
           observer.observe(compTitle);
           observer.observe(compContainer);
+          document
+            .querySelectorAll("#competencies-container > div")
+            .forEach((card) => observer.observe(card));
 
-          // === Technical Stack ===
+          /* ========================
+     TECH STACK
+  ========================= */
           const techContainer = document.getElementById("techstack-container");
           const techTitle = document.getElementById("techstack-title");
           techContainer.innerHTML = "";
 
           skillsData.techStack.forEach((t) => {
             const pill = document.createElement("div");
-            pill.className =
-              "flex items-center gap-3 bg-gray-800/70 border border-gray-700 rounded-full px-5 py-3 transition-all duration-300 hover:border-cyan-400 hover:shadow-[0_0_10px_rgba(34,211,238,0.3),inset_0_0_8px_rgba(34,211,238,0.15)] hover:bg-gray-800/90";
+            pill.className = `
+          flex items-center gap-3 bg-gray-800/70 border border-gray-700 
+          rounded-full px-5 py-3 transition-all duration-300 
+          hover:border-cyan-400 
+          hover:shadow-[0_0_10px_rgba(34,211,238,0.3),inset_0_0_8px_rgba(34,211,238,0.15)] 
+          hover:bg-gray-800/90
+        `;
             pill.innerHTML = `
-              <img src="${t.badgeUrl}" alt="${t.tech}" class="w-6 h-6 object-contain">
-              <span class="text-gray-200 text-base font-medium">${t.tech}</span>`;
+          <img src="${t.badgeUrl}" alt="${t.tech}" class="w-6 h-6 object-contain">
+          <span class="text-gray-200 text-base font-medium">${t.tech}</span>
+        `;
             techContainer.appendChild(pill);
           });
 
@@ -997,6 +1120,12 @@
       async function loadCertificates() {
         try {
           const res = await fetch("./resources/certificates.json");
+          if (!res.ok) {
+            console.error("Failed to load certificates.json:", res.status);
+            document.getElementById("certificates-container").innerHTML =
+              '<p class="text-red-400">Could not load certificates. Check certificates.json path.</p>';
+            return;
+          }
           const data = await res.json();
           const certs = data.certificates || [];
           const container = document.getElementById("certificates-container");
@@ -1027,6 +1156,8 @@
             .join("");
         } catch (e) {
           console.error("Failed to load certificates:", e);
+          document.getElementById("certificates-container").innerHTML =
+            '<p class="text-red-400">Could not load certificates. Check certificates.json path.</p>';
         }
       }
 
