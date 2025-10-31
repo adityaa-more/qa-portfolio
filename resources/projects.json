@@ -1,0 +1,139 @@
+[
+  {
+    "title": "E-Commerce Web Application – Test Automation",
+    "icon": "🛒",
+
+    "description": [
+      "Designed and executed 200+ manual test cases in TestRail covering Functional, Regression, and Integration testing, with Jira for defect tracking and reporting.",
+      "Performed UI, API, and database validation to ensure end-to-end functionality and data consistency.",
+      "Automated core modules — Login, Product Search, Add to Cart, and Checkout — using Selenium WebDriver, Java, and TestNG.",
+      "Implemented Page Object Model (POM) and Data-Driven Testing (DDT) frameworks integrated with Jenkins CI/CD pipelines, generating detailed Allure and Extent Reports.",
+      "Enhanced regression suite efficiency by 40% through reusable scripts, centralized test management, and consistent coverage across builds."
+    ],
+
+    "tools": [
+      {
+        "name": "Selenium",
+        "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg"
+      },
+      {
+        "name": "TestNG",
+        "badgeUrl": "https://miro.medium.com/v2/resize:fit:1400/1*4BHz11q6OIX4z8FqtZjjSg.png"
+      },
+      {
+        "name": "Postman",
+        "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg"
+      },
+      {
+        "name": "TestRail",
+        "badgeUrl": "https://cdn.simpleicons.org/testrail/000000"
+      },
+      {
+        "name": "Jenkins",
+        "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg"
+      },
+      {
+        "name": "Java",
+        "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+      },
+      {
+        "name": "Jira",
+        "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg"
+      },
+      {
+        "name": "Maven",
+        "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/maven/maven-original.svg"
+      },
+      {
+        "name": "Git",
+        "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+      },
+      {
+        "name": "Allure Reports",
+        "badgeUrl": "https://allurereport.org/public/img/allure-report.svg"
+      },
+      {
+        "name": "Extent Reports",
+        "badgeUrl": "https://extentreports.com/docs/versions/4/java/javadoc/files/bdd/extentbdd/logo.png"
+      }
+    ]
+  },
+  {
+    "title": "Mercury Banking Application - Manual Testing (Finance Domain)",
+    "icon": "🏦",
+
+    "description": [
+      "Executed 80+ manual test cases in TestRail covering Functional, Regression, and Integration testing across core banking modules like Fund Transfers, Dashboard, and Card Management.",
+      "Validated end-to-end workflows including UI, transaction history, and API responses ensuring accurate account balances and data consistency.",
+      "Managed defect lifecycle in Jira — from logging to closure — collaborating with developers to resolve high-severity bugs.",
+      "Performed negative, usability, and cross-browser testing to ensure smooth performance and responsiveness across Chrome, Edge, and Firefox.",
+      "Delivered detailed test reports and traceability matrix improving overall release quality and test coverage within Agile sprints."
+    ],
+
+    "tools": [
+      {
+        "name": "TestRail",
+        "badgeUrl": "https://cdn.simpleicons.org/testrail/000000"
+      },
+      {
+        "name": "Jira",
+        "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg"
+      },
+      {
+        "name": "Postman",
+        "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg"
+      },
+      {
+        "name": "SQL",
+        "badgeUrl": "https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png"
+      },
+      {
+        "name": "Agile",
+        "badgeUrl": "https://static.thenounproject.com/png/603658-200.png"
+      },
+      {
+        "name": "Manual Testing",
+        "badgeUrl": "https://img.favpng.com/0/24/13/test-icon-educational-icons-icon-verified-text-paper-icon-png-favpng-7TP0mZHsnD4vVssLzL8qeSxqH.jpg"
+      }
+    ]
+  },
+  {
+    "title": "Simple Books API – Postman Functional & Regression Testing Project",
+    "icon": "📚",
+
+    "description": [
+      "Designed and validated CRUD operations for endpoints like /books, /orders, and /status to ensure accurate API responses and error handling.",
+      "Performed positive, negative, and boundary testing using Postman Collections and Environments for organized, reusable workflows.",
+      "Implemented data-driven testing with dynamic variables and parameterized request data to enhance test flexibility and maintainability.",
+      "Executed automated regression runs via Postman Collection Runner and Newman, validating response codes, payloads, and JSON schema consistency.",
+      "Logged defects in Jira and maintained detailed test documentation aligned with SDLC and QA best practices."
+    ],
+
+    "tools": [
+      {
+        "name": "Postman",
+        "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg"
+      },
+      {
+        "name": "Newman",
+        "badgeUrl": "https://res.cloudinary.com/apideck/image/upload/v1626428647/icons/newman.png"
+      },
+      {
+        "name": "Jira",
+        "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg"
+      },
+      {
+        "name": "REST APIs",
+        "badgeUrl": "https://3doptix-wordpress-prod.s3.amazonaws.com/wp-content/uploads/2023/12/REST_API.png"
+      },
+      {
+        "name": "JSON",
+        "badgeUrl": "https://cdn.simpleicons.org/json/000000"
+      },
+      {
+        "name": "STLC",
+        "badgeUrl": "https://static.thenounproject.com/png/3538843-200.png"
+      }
+    ]
+  }
+]

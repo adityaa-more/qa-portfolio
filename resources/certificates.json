@@ -1,0 +1,25 @@
+{
+  "certificates": [
+    {
+      "name": "Core Java",
+      "institute": "Excel Computers",
+      "year": "2023",
+      "logo": "https://content.jdmagicbox.com/comp/kolhapur/f7/0231px231.x231.140602120031.g2f7/catalogue/excel-computers-rajarampuri-kolhapur-computer-training-institutes-9ogm3fj0x9.jpg",
+      "link": "xxx"
+    },
+    {
+      "name": "Web Devlopment Bootcamp",
+      "institute": "Udemy",
+      "year": "2023",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Udemy_logo.svg",
+      "link": "xxx"
+    },
+    {
+      "name": "Software Testing (Manual + Automation)",
+      "institute": "Q-Spiders",
+      "year": "2025",
+      "logo": "https://sbs.ac.in/wp-content/uploads/2024/01/QSpiders-logo.jpg",
+      "link": "xxx"
+    }
+  ]
+}

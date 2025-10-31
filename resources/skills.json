@@ -1,0 +1,174 @@
+{
+  "coreCompetencies": [
+    {
+      "category": "Manual Testing",
+      "items": [
+        "Test Case Design",
+        "Exploratory Testing",
+        "Regression Testing",
+        "User Acceptance Testing"
+      ]
+    },
+    {
+      "category": "Automation Testing",
+      "items": ["Test Automation", "Framework Development", "CI/CD Integration"]
+    },
+    {
+      "category": "API Testing",
+      "items": [
+        "Test Planning",
+        "Test Strategy",
+        "Test Documentation",
+        "Risk Assessment",
+        "Quality Metrics"
+      ]
+    },
+    {
+      "category": "Bug Tracking",
+      "items": [
+        "Defect Management",
+        "Root Cause Analysis",
+        "Issue Prioritization",
+        "Status Reporting"
+      ]
+    }
+  ],
+  "techStack": [
+    {
+      "tech": "Jira",
+      "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg"
+    },
+    {
+      "tech": "TestRail",
+      "badgeUrl": "https://cdn.simpleicons.org/testrail/000000"
+    },
+    {
+      "tech": "Manual Testing",
+      "badgeUrl": "https://img.favpng.com/0/24/13/test-icon-educational-icons-icon-verified-text-paper-icon-png-favpng-7TP0mZHsnD4vVssLzL8qeSxqH.jpg"
+    },
+    {
+      "tech": "SDLC",
+      "badgeUrl": "https://cdn-icons-png.flaticon.com/512/5958/5958852.png"
+    },
+    {
+      "tech": "STLC",
+      "badgeUrl": "https://static.thenounproject.com/png/3538843-200.png"
+    },
+    {
+      "tech": "Agile",
+      "badgeUrl": "https://static.thenounproject.com/png/603658-200.png"
+    },
+    {
+      "tech": "Bug Tracking",
+      "badgeUrl": "https://static.thenounproject.com/png/2119186-200.png"
+    },
+    {
+      "tech": "Selenium",
+      "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg"
+    },
+    {
+      "tech": "Java",
+      "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+    },
+    {
+      "tech": "TestNG",
+      "badgeUrl": "https://miro.medium.com/v2/resize:fit:1400/1*4BHz11q6OIX4z8FqtZjjSg.png"
+    },
+    {
+      "tech": "Maven",
+      "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/maven/maven-original.svg"
+    },
+    {
+      "tech": "Page Object Model (POM)",
+      "badgeUrl": "https://static.thenounproject.com/png/7191637-200.png"
+    },
+    {
+      "tech": "Data-Driven Testing (DDT)",
+      "badgeUrl": "https://static.thenounproject.com/png/2661913-200.png"
+    },
+    {
+      "tech": "JMeter",
+      "badgeUrl": "https://jmeter.apache.org/images/mstile-144x144.png"
+    },
+    {
+      "tech": "Postman",
+      "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg"
+    },
+    {
+      "tech": "Newman",
+      "badgeUrl": "https://res.cloudinary.com/apideck/image/upload/v1626428647/icons/newman.png"
+    },
+    {
+      "tech": "REST APIs",
+      "badgeUrl": "https://3doptix-wordpress-prod.s3.amazonaws.com/wp-content/uploads/2023/12/REST_API.png"
+    },
+    {
+      "tech": "JSON",
+      "badgeUrl": "https://cdn.simpleicons.org/json/000000"
+    },
+    {
+      "tech": "MySQL",
+      "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+    },
+    {
+      "tech": "SQL",
+      "badgeUrl": "https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png"
+    },
+    {
+      "tech": "Extent Reports",
+      "badgeUrl": "https://extentreports.com/docs/versions/4/java/javadoc/files/bdd/extentbdd/logo.png"
+    },
+    {
+      "tech": "Allure Reports",
+      "badgeUrl": "https://allurereport.org/public/img/allure-report.svg"
+    },
+    {
+      "tech": "Jenkins",
+      "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg"
+    },
+    {
+      "tech": "Git",
+      "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+    },
+    {
+      "tech": "GitHub",
+      "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+    },
+    {
+      "tech": "JavaScript",
+      "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+    },
+    {
+      "tech": "Python",
+      "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+    },
+    {
+      "tech": "HTML5",
+      "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+    },
+    {
+      "tech": "CSS3",
+      "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+    },
+    {
+      "tech": "GitHub Actions",
+      "badgeUrl": "https://cdn.simpleicons.org/githubactions/000000"
+    },
+    {
+      "tech": "Confluence",
+      "badgeUrl": "https://cdn.simpleicons.org/confluence/000000"
+    },
+    {
+      "tech": "Slack",
+      "badgeUrl": "https://cdn.simpleicons.org/slack/000000"
+    },
+    {
+      "tech": "Trello",
+      "badgeUrl": "https://cdn.simpleicons.org/trello/000000"
+    },
+    {
+      "tech": "Microsoft Teams",
+      "badgeUrl": "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/microsoft-teams-icon.png"
+    }
+  ]
+}

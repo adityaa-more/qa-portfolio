@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./resources/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Aditya More | QA Portfolio</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Adjust top margin to account for fixed navbar */
+      #home {
+        margin-top: 80px;
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-900 text-white font-sans">
+    <!-- ======================
+         NAVBAR
+    ======================== -->
+    <nav
+      class="fixed top-0 w-full z-50 bg-gray-900/80 backdrop-blur-md text-cyan-400 border-b border-cyan-900/40 shadow-[0_2px_15px_rgba(34,211,238,0.1)]"
+    >
+      <div
+        class="container mx-auto flex justify-between items-center py-4 px-6"
+      >
+        <h1
+          class="text-2xl font-extrabold tracking-wide bg-gradient-to-r from-cyan-400 to-blue-300 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300"
+        >
+          Aditya More
+        </h1>
+
+        <ul class="flex space-x-8 text-lg font-medium">
+          <li>
+            <a href="#home" class="relative group transition">
+              Home
+              <span
+                class="absolute left-0 -bottom-1 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full"
+              ></span>
+            </a>
+          </li>
+          <li>
+            <a href="#skills" class="relative group transition">
+              Skills
+              <span
+                class="absolute left-0 -bottom-1 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full"
+              ></span>
+            </a>
+          </li>
+          <li>
+            <a href="#projects" class="relative group transition">
+              Projects
+              <span
+                class="absolute left-0 -bottom-1 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full"
+              ></span>
+            </a>
+          </li>
+          <li>
+            <a href="#contact" class="relative group transition">
+              Contact
+              <span
+                class="absolute left-0 -bottom-1 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full"
+              ></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- =======================
+         HERO SECTION
+    ======================== -->
+    <section
+      id="home"
+      class="min-h-screen flex flex-col justify-center items-center text-center px-6"
+    >
+      <div class="mb-6 flex justify-center">
+        <div
+          class="relative inline-flex items-center px-3 py-1 rounded-full border border-cyan-400 text-cyan-100 bg-transparent transition-all duration-300 shadow-[0_0_6px_rgba(34,211,238,0.7)]"
+          title="Available for New Opportunities"
+          aria-label="Available for New Opportunities"
+        >
+          <span class="absolute left-3 flex items-center">
+            <span
+              class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-cyan-400 opacity-60"
+            ></span>
+            <span
+              class="relative inline-flex h-3 w-3 rounded-full bg-cyan-400"
+            ></span>
+          </span>
+          <span class="font-medium text-xs md:text-base ml-5"
+            >Available for New Opportunities</span
+          >
+        </div>
+      </div>
+
+      <h2
+        class="text-4xl md:text-5xl font-bold text-cyan-400 mb-4 animate-bounce"
+      >
+        Hi, I'm Aditya More 👋
+      </h2>
+
+      <p class="text-lg md:text-xl text-gray-300 max-w-2xl">
+        QA Engineer passionate about
+        <span class="text-cyan-400">Manual, Automation, and API Testing</span>.
+        Focused on improving software quality, performance, and user
+        satisfaction.
+      </p>
+
+      <div class="mt-8 flex flex-wrap justify-center gap-5">
+        <a
+          href="#contact"
+          class="group relative overflow-hidden rounded-full px-8 py-2.5 font-semibold text-black transition-all duration-300 bg-cyan-500 hover:bg-cyan-600 hover:shadow-[0_0_20px_rgba(34,211,238,0.7)]"
+        >
+          <span class="relative z-10">Contact Me</span>
+          <span
+            class="absolute inset-0 bg-cyan-400 opacity-0 group-hover:opacity-20 transition-opacity"
+          ></span>
+        </a>
+
+        <a
+          href="./resources/Aditya_More_ST.pdf"
+          download
+          class="group relative overflow-hidden rounded-full border border-cyan-400 px-8 py-2.5 font-semibold text-cyan-400 transition-all duration-300 hover:text-black hover:border-transparent hover:shadow-[0_0_25px_rgba(34,211,238,0.6)]"
+        >
+          <span class="relative z-10">Download Resume</span>
+          <span
+            class="absolute inset-0 bg-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity"
+          ></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- =======================
+         CORE COMPETENCIES
+    ======================== -->
+    <section
+      id="core-competencies"
+      class="py-24 bg-gray-900 text-center relative overflow-hidden"
+    >
+      <h3
+        id="competencies-title"
+        class="text-4xl font-bold text-cyan-400 mb-16 opacity-0 translate-y-4 transition-all duration-700 text-center"
+      >
+        Core Competencies
+      </h3>
+
+      <div
+        id="competencies-container"
+        class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-6 opacity-0 translate-y-6 transition-all duration-700"
+      ></div>
+    </section>
+
+    <!-- =======================
+         TECH STACK
+    ======================== -->
+    <section
+      id="tech-stack"
+      class="py-20 bg-gray-900 text-center relative overflow-hidden"
+    >
+      <h3
+        id="techstack-title"
+        class="text-4xl font-bold text-cyan-400 mb-12 opacity-0 translate-y-4 transition-all duration-700 text-center"
+      >
+        Technical Stack
+      </h3>
+
+      <div
+        class="max-w-6xl mx-auto px-6 py-12 rounded-3xl border border-gray-800 bg-gradient-to-b from-gray-900 to-gray-950 shadow-[inset_0_5px_15px_rgba(0,0,0,0.6),inset_0_-5px_15px_rgba(34,211,238,0.1)]"
+      >
+        <div
+          id="techstack-container"
+          class="flex flex-wrap justify-center items-center gap-6 opacity-0 translate-y-6 transition-all duration-700"
+        ></div>
+      </div>
+    </section>
+
+    <!-- =======================
+         PROJECTS
+    ======================== -->
+    <section
+      id="projects"
+      class="py-24 bg-gray-900 text-center relative overflow-hidden"
+    >
+      <style>
+        /* Glow line animation */
+        @keyframes glowLine {
+          0% {
+            box-shadow: 0 0 10px rgba(34, 211, 238, 0.35);
+          }
+
+          50% {
+            box-shadow: 0 0 30px rgba(34, 211, 238, 0.85);
+          }
+
+          100% {
+            box-shadow: 0 0 10px rgba(34, 211, 238, 0.35);
+          }
+        }
+
+        .timeline-line {
+          animation: glowLine 3s infinite ease-in-out;
+        }
+
+        /* Entry animation and focus styling */
+        .proj-card {
+          transition: transform 0.6s ease, opacity 0.6s ease,
+            box-shadow 0.6s ease, border-color 0.6s ease;
+          opacity: 0.6;
+          transform: translateY(20px) scale(0.96);
+          z-index: 0;
+        }
+
+        .proj-card.visible {
+          opacity: 1;
+          transform: translateY(0) scale(0.98);
+        }
+
+        /* focused card (center on scroll) */
+        .proj-card.active {
+          transform: translateY(-10px) scale(1.06);
+          opacity: 1;
+          z-index: 30;
+          box-shadow: 0 12px 30px rgba(34, 211, 238, 0.18);
+          border-color: rgba(34, 211, 238, 0.5);
+        }
+
+        /* connector dot exactly on left border center of the card */
+        .dot {
+          position: absolute;
+          left: -0.75rem;
+          /* adjust if you change card padding/rounding */
+          top: 50%;
+          transform: translateY(-50%);
+          width: 1.25rem;
+          height: 1.25rem;
+          border-radius: 999px;
+          background: #22d3ee;
+          /* cyan-400 */
+          border: 4px solid #111827;
+          /* gray-900 border */
+          box-shadow: 0 0 8px rgba(34, 211, 238, 0.6);
+        }
+
+        /* tool badges */
+        .tool-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.35rem 0.6rem;
+          border-radius: 999px;
+          background: rgba(15, 23, 42, 0.6);
+          border: 1px solid rgba(56, 189, 248, 0.06);
+          font-size: 0.9rem;
+          color: #9beafe;
+          transition: transform 0.22s ease, box-shadow 0.22s ease;
+        }
+
+        .tool-badge img {
+          width: 20px;
+          height: 20px;
+          object-fit: contain;
+          border-radius: 4px;
+          filter: drop-shadow(0 0 2px rgba(34, 211, 238, 0.25));
+        }
+
+        .tool-badge:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 8px 22px rgba(34, 211, 238, 0.12);
+        }
+
+        /* responsive tweak: hide dots & timeline on small screens */
+        @media (max-width: 768px) {
+          .timeline-line,
+          .dot {
+            display: none;
+          }
+        }
+      </style>
+
+      <h3 class="text-4xl font-bold text-cyan-400 mb-16">Projects</h3>
+
+      <!-- Left vertical glowing line (position left in page) -->
+      <div
+        class="absolute left-[12%] top-40 bottom-20 w-1 bg-cyan-500 rounded-full timeline-line hidden md:block"
+      ></div>
+
+      <!-- container where cards will be injected -->
+      <div
+        id="projects-container"
+        class="max-w-5xl mx-auto flex flex-col items-center gap-10 relative px-6"
+      ></div>
+    </section>
+
+    <!-- =======================
+         CERTIFICATIONS
+    ======================== -->
+    <!-- /sections/certificates.html -->
+    <section id="certificates" class="py-24 bg-gray-900 text-center">
+      <h3 class="text-4xl font-bold text-cyan-400 mb-12">Certifications</h3>
+
+      <div
+        id="certificates-container"
+        class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6"
+      ></div>
+
+      <style>
+        /* ==== Unified Matte Certificate Card (Same as Projects Section) ==== */
+        .certificate-card {
+          position: relative;
+          background: #1f2937;
+          border: 1.5px solid rgba(34, 211, 238, 0.12);
+          border-radius: 0.75rem;
+          padding: 1.25rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          text-align: left;
+          height: 250px;
+          transition: all 0.3s ease;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Subtle black hover effect (no glow) */
+        .certificate-card:hover {
+          border-color: rgba(34, 211, 238, 0.25);
+          transform: translateY(-3px);
+          box-shadow: 0 8px 22px rgba(0, 0, 0, 0.4);
+          /* dark shadow instead of cyan */
+        }
+
+        /* Image box (same matte style) */
+        .certificate-card .image-box {
+          width: 100%;
+          height: 40%;
+          background: rgba(15, 23, 42, 0.6);
+          border-radius: 0.5rem;
+          border: 1.5px solid rgba(34, 211, 238, 0.12);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 1rem;
+          overflow: hidden;
+        }
+
+        .certificate-card img {
+          width: 70%;
+          height: 100%;
+          object-fit: cover;
+          opacity: 0.9;
+          border-radius: 0.5rem;
+        }
+
+        /* Certificate details */
+        .certificate-details {
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          gap: 0.6rem;
+        }
+
+        .certificate-details h4 {
+          color: #22d3ee;
+          /* cyan title */
+          font-weight: 600;
+          font-size: 1.05rem;
+          margin: 0;
+          letter-spacing: 0.3px;
+        }
+
+        .certificate-meta {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .certificate-meta .institute {
+          color: #b5c9d1;
+          font-size: 0.9rem;
+          font-weight: 500;
+        }
+
+        .certificate-meta .year {
+          color: #67e8f9;
+          font-size: 0.9rem;
+          font-weight: 500;
+        }
+
+        /* Button — matches tool badges style */
+        .view-btn {
+          align-self: flex-end;
+          margin-top: 0.8rem;
+          background: rgba(15, 23, 42, 0.6);
+          border: 1px solid rgba(34, 211, 238, 0.25);
+          color: #9beafe;
+          border-radius: 999px;
+          padding: 0.4rem 0.8rem;
+          font-size: 0.85rem;
+          font-weight: 500;
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.4rem;
+          transition: all 0.25s ease;
+        }
+
+        .view-btn:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 8px 22px rgba(0, 0, 0, 0.4);
+          /* dark shadow instead of cyan */
+          border-color: rgba(34, 211, 238, 0.35);
+          color: #e0faff;
+          background: #000;
+          /* subtle black hover */
+        }
+
+        /* Optional: badge tag (same as tools section) */
+        .certificate-tag {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.4rem;
+          padding: 0.35rem 0.6rem;
+          border-radius: 999px;
+          background: rgba(15, 23, 42, 0.6);
+          border: 1px solid rgba(34, 211, 238, 0.08);
+          font-size: 0.85rem;
+          color: #9beafe;
+          transition: transform 0.22s ease, box-shadow 0.22s ease;
+        }
+
+        .certificate-tag:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+          .certificate-card {
+            width: 100%;
+            height: auto;
+          }
+        }
+      </style>
+    </section>
+
+    <!-- =======================
+         CONTACT
+    ======================== -->
+    <section
+      id="contact"
+      class="py-24 bg-gray-900 text-center relative overflow-hidden"
+    >
+      <style>
+        #contact::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(
+            circle at 50% 0%,
+            rgba(34, 211, 238, 0.08),
+            transparent 70%
+          );
+          z-index: 0;
+        }
+
+        .contact-container {
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+          flex-wrap: wrap;
+          gap: 3rem;
+          max-width: 1100px;
+          margin: 0 auto;
+          position: relative;
+          z-index: 10;
+        }
+
+        .contact-form {
+          flex: 1 1 55%;
+          background: rgba(17, 24, 39, 0.9);
+          border: 1px solid rgba(34, 211, 238, 0.15);
+          box-shadow: 0 0 20px rgba(34, 211, 238, 0.1);
+          border-radius: 1rem;
+          padding: 2rem;
+          transition: box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .contact-form:hover {
+          box-shadow: 0 0 25px rgba(34, 211, 238, 0.2);
+          border-color: rgba(34, 211, 238, 0.3);
+        }
+
+        .contact-input {
+          width: 100%;
+          background: #111827;
+          border: 1px solid #374151;
+          color: #e5e7eb;
+          border-radius: 0.5rem;
+          padding: 0.75rem 1rem;
+          transition: all 0.3s ease;
+        }
+
+        .contact-input:focus {
+          border-color: #22d3ee;
+          box-shadow: 0 0 10px rgba(34, 211, 238, 0.2);
+          outline: none;
+        }
+
+        .contact-btn {
+          background: #22d3ee;
+          color: #000;
+          font-weight: 600;
+          border-radius: 0.5rem;
+          padding: 0.75rem;
+          transition: all 0.3s ease;
+          width: 100%;
+        }
+
+        .contact-btn:hover {
+          background: #06b6d4;
+          box-shadow: 0 0 20px rgba(34, 211, 238, 0.4);
+        }
+
+        .contact-links {
+          flex: 1 1 35%;
+          text-align: left;
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+          color: #e5e7eb;
+          font-size: 1.05rem;
+        }
+
+        .contact-link {
+          display: flex;
+          align-items: center;
+          gap: 0.8rem;
+          background: rgba(17, 24, 39, 0.8);
+          border: 1px solid rgba(34, 211, 238, 0.15);
+          padding: 0.9rem 1rem;
+          border-radius: 0.75rem;
+          transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+          border-color: rgba(34, 211, 238, 0.5);
+          box-shadow: 0 0 20px rgba(34, 211, 238, 0.25);
+          transform: translateY(-4px);
+        }
+
+        .contact-link img {
+          width: 26px;
+          height: 26px;
+          object-fit: contain;
+        }
+
+        .contact-link a {
+          color: #22d3ee;
+          transition: color 0.3s ease;
+        }
+
+        .contact-link a:hover {
+          color: #67e8f9;
+        }
+
+        #success-popup {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) scale(0.9);
+          background: #0f172a;
+          border: 1px solid rgba(34, 211, 238, 0.4);
+          color: #a5f3fc;
+          padding: 1.5rem 2rem;
+          border-radius: 1rem;
+          box-shadow: 0 0 25px rgba(34, 211, 238, 0.3);
+          opacity: 0;
+          z-index: 1000;
+          transition: all 0.3s ease;
+        }
+
+        #success-popup.show {
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1);
+        }
+
+        @media (max-width: 900px) {
+          .contact-container {
+            flex-direction: column;
+            align-items: center;
+          }
+
+          .contact-links {
+            align-items: center;
+            text-align: center;
+          }
+
+          .contact-link {
+            justify-content: center;
+            width: 100%;
+            max-width: 400px;
+          }
+        }
+      </style>
+      <h3 class="text-4xl font-bold text-cyan-400 mb-8 relative z-10">
+        Contact
+      </h3>
+      <p class="text-gray-300 mb-10 relative z-10">
+        Get in touch directly by filling the form or reach out through any
+        platform 👇
+      </p>
+      <div class="contact-container">
+        <form id="contact-form" class="contact-form">
+          <div class="mb-5">
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder="Subject"
+              required
+              class="contact-input"
+            />
+          </div>
+          <div class="mb-5">
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Your message..."
+              required
+              class="contact-input"
+            ></textarea>
+          </div>
+          <button type="submit" class="contact-btn">Send Message</button>
+        </form>
+        <div class="contact-links">
+          <div class="contact-link">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
+              alt="Gmail"
+            />
+            <a href="mailto:adityamore.se@gmail.com" target="_blank"
+              >adityamore.se@gmail.com</a
+            >
+          </div>
+          <div class="contact-link">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+              alt="LinkedIn"
+            />
+            <a href="https://www.linkedin.com/in/adityaa-more" target="_blank"
+              >LinkedIn Profile</a
+            >
+          </div>
+          <div class="contact-link">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/597/597177.png"
+              alt="Phone"
+            />
+            <span>+91 8888052888</span>
+          </div>
+        </div>
+      </div>
+      <div id="success-popup">✅ Message window opened! Ready to send.</div>
+      <script>
+        const form = document.getElementById("contact-form");
+        const popup = document.getElementById("success-popup");
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const subject = encodeURIComponent(
+            document.getElementById("subject").value
+          );
+          const message = encodeURIComponent(
+            document.getElementById("message").value
+          );
+          const mailtoLink = `mailto:adityamore.se@gmail.com?subject=${subject}&body=${message}`;
+          window.location.href = mailtoLink;
+          popup.classList.add("show");
+          setTimeout(() => popup.classList.remove("show"), 3000);
+          form.reset();
+        });
+      </script>
+    </section>
+
+    <!-- =======================
+         FOOTER
+    ======================== -->
+    <footer class="bg-gray-900 text-gray-400 py-8 border-t border-cyan-900/40">
+      <div
+        class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6"
+      >
+        <div class="text-center md:text-left">
+          <p class="text-cyan-400 font-semibold text-lg mb-1">Aditya More</p>
+          <p class="text-sm text-gray-400">
+            Built with 💻 using <span class="text-cyan-400">HTML</span> &
+            <span class="text-cyan-400">TailwindCSS</span>
+          </p>
+        </div>
+
+        <div class="flex space-x-8">
+          <a
+            href="https://www.linkedin.com/in/adityaa-more"
+            target="_blank"
+            aria-label="LinkedIn"
+            class="group transition transform hover:scale-110"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+              alt="LinkedIn"
+              class="w-7 h-7 transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(34,211,238,0.8)]"
+            />
+          </a>
+
+          <a
+            href="https://github.com/adityaa-more"
+            target="_blank"
+            aria-label="GitHub"
+            class="group transition transform hover:scale-110"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/733/733553.png"
+              alt="GitHub"
+              class="w-7 h-7 transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(34,211,238,0.8)]"
+            />
+          </a>
+
+          <a
+            href="mailto:adityamore.se@gmail.com"
+            aria-label="Email"
+            class="group transition transform hover:scale-110"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
+              alt="Email"
+              class="w-7 h-7 transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(34,211,238,0.8)]"
+            />
+          </a>
+        </div>
+
+        <div class="text-center md:text-right text-sm text-gray-500">
+          © 2025 Aditya More. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- =======================
+         SCRIPTS
+    ======================== -->
+    <script>
+      /* Load skills dynamically */
+      async function loadSkillsData() {
+        try {
+          const skillsRes = await fetch("./resources/skills.json", {
+            cache: "no-store",
+          });
+          if (!skillsRes.ok) throw new Error("Failed to load skills.json");
+
+          const skillsData = await skillsRes.json();
+
+          // === Core Competencies ===
+          const compContainer = document.getElementById(
+            "competencies-container"
+          );
+          const compTitle = document.getElementById("competencies-title");
+          compContainer.innerHTML = "";
+
+          skillsData.coreCompetencies.forEach((section) => {
+            const card = document.createElement("div");
+            card.className =
+              "bg-gray-800 border border-gray-700 rounded-xl p-6 text-left transition-all duration-300 hover:scale-105 hover:shadow-[0_0_18px_rgba(34,211,238,0.4)]";
+            card.innerHTML = `
+              <h4 class="text-xl font-semibold text-cyan-300 mb-3 text-center">${
+                section.category
+              }</h4>
+              <ul class="text-gray-300 text-base space-y-2 ml-4">
+                ${section.items
+                  .map(
+                    (i) => `
+                    <li class="flex items-center gap-2">
+                      <span class="inline-block w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_6px_rgba(34,211,238,0.7)]"></span>
+                      ${i}
+                    </li>`
+                  )
+                  .join("")}
+              </ul>`;
+            compContainer.appendChild(card);
+          });
+
+          // === Fade-in effect for Core Competencies ===
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.remove("opacity-0", "translate-y-6");
+                  entry.target.classList.add("opacity-100", "translate-y-0");
+                }
+              });
+            },
+            { threshold: 0.2 }
+          );
+
+          observer.observe(compTitle);
+          observer.observe(compContainer);
+
+          // === Technical Stack ===
+          const techContainer = document.getElementById("techstack-container");
+          const techTitle = document.getElementById("techstack-title");
+          techContainer.innerHTML = "";
+
+          skillsData.techStack.forEach((t) => {
+            const pill = document.createElement("div");
+            pill.className =
+              "flex items-center gap-3 bg-gray-800/70 border border-gray-700 rounded-full px-5 py-3 transition-all duration-300 hover:border-cyan-400 hover:shadow-[0_0_10px_rgba(34,211,238,0.3),inset_0_0_8px_rgba(34,211,238,0.15)] hover:bg-gray-800/90";
+            pill.innerHTML = `
+              <img src="${t.badgeUrl}" alt="${t.tech}" class="w-6 h-6 object-contain">
+              <span class="text-gray-200 text-base font-medium">${t.tech}</span>`;
+            techContainer.appendChild(pill);
+          });
+
+          const techObserver = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.remove("opacity-0", "translate-y-6");
+                  entry.target.classList.add("opacity-100", "translate-y-0");
+                }
+              });
+            },
+            { threshold: 0.2 }
+          );
+
+          techObserver.observe(techTitle);
+          techObserver.observe(techContainer);
+        } catch (err) {
+          console.error("Failed to load skills", err);
+        }
+      }
+
+      /* === PROJECTS SECTION LOADER */
+      const PROJECTS_URL = "./resources/projects.json"; // Change if hosted elsewhere
+
+      // === Utility: Create element with classes and optional text ===
+      function el(tag, classes, text) {
+        const e = document.createElement(tag);
+        if (classes) e.className = classes;
+        if (text) e.innerHTML = text;
+        return e;
+      }
+
+      // === Utility: Escape HTML to prevent injection ===
+      function escapeHtml(unsafe) {
+        if (!unsafe && unsafe !== 0) return "";
+        return String(unsafe)
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+
+      // === Render a single project card ===
+      function renderCard(project) {
+        const card = el(
+          "div",
+          "proj-card relative w-full bg-gray-800 border border-gray-700 rounded-2xl p-10 text-left"
+        );
+
+        // Decorative dot
+        card.appendChild(el("div", "dot hidden md:block"));
+
+        // Project title
+        const h4 = el(
+          "h4",
+          "text-2xl font-semibold text-cyan-300 mb-3",
+          `${project.icon || "💼"} ${escapeHtml(project.title)}`
+        );
+        card.appendChild(h4);
+
+        // Subtitle (if any)
+        if (project.subtitle) {
+          card.appendChild(
+            el(
+              "p",
+              "text-gray-300 mb-4",
+              `Associated with <span class="text-cyan-400">${escapeHtml(
+                project.subtitle
+              )}</span>`
+            )
+          );
+        }
+
+        // Description (support both string and array)
+        if (Array.isArray(project.description)) {
+          project.description.forEach((p) => {
+            card.appendChild(
+              el(
+                "p",
+                "text-gray-300 text-lg leading-relaxed mb-3",
+                escapeHtml(p)
+              )
+            );
+          });
+        } else if (project.description) {
+          card.appendChild(
+            el(
+              "p",
+              "text-gray-300 text-lg leading-relaxed mb-3",
+              escapeHtml(project.description)
+            )
+          );
+        }
+
+        // Tools / Badges section
+        const toolsWrap = el("div", "mt-4 flex flex-wrap gap-3");
+        if (Array.isArray(project.tools)) {
+          project.tools.forEach((tool) => {
+            const tb = el("div", "tool-badge");
+
+            if (tool.badgeUrl) {
+              const img = document.createElement("img");
+              img.src = tool.badgeUrl;
+              img.alt = tool.name || "badge";
+              img.onerror = () => (img.style.display = "none"); // Hide broken badges
+              tb.appendChild(img);
+            }
+
+            tb.appendChild(el("span", "", escapeHtml(tool.name || tool)));
+            toolsWrap.appendChild(tb);
+          });
+        }
+        card.appendChild(toolsWrap);
+
+        return card;
+      }
+
+      // === Load and Render All Projects ===
+      async function loadProjects() {
+        try {
+          const res = await fetch(PROJECTS_URL, { cache: "no-store" });
+          if (!res.ok)
+            throw new Error("Failed to load projects.json: " + res.status);
+
+          const projects = await res.json();
+          const container = document.getElementById("projects-container");
+          container.innerHTML = ""; // Clear existing content
+
+          // Render each project card
+          projects.forEach((p) => container.appendChild(renderCard(p)));
+
+          // === Scroll Reveal Animation ===
+          const cards = document.querySelectorAll(".proj-card");
+          const revealObserver = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) entry.target.classList.add("visible");
+              });
+            },
+            { threshold: 0.15 }
+          );
+          cards.forEach((c) => revealObserver.observe(c));
+
+          // === Active Card Highlight Animation ===
+          const activeObserver = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting && entry.intersectionRatio > 0.6) {
+                  document
+                    .querySelectorAll(".proj-card.active")
+                    .forEach((x) => x.classList.remove("active"));
+                  entry.target.classList.add("active");
+                }
+              });
+            },
+            { threshold: [0.6] }
+          );
+          cards.forEach((c) => activeObserver.observe(c));
+        } catch (err) {
+          console.error("Failed to load projects:", err);
+          document.getElementById("projects-container").innerHTML =
+            '<p class="text-red-400">Could not load projects. Check projects.json path.</p>';
+        }
+      }
+
+      /* === Certificates SECTION LOADER === */
+      async function loadCertificates() {
+        try {
+          const res = await fetch("./resources/certificates.json");
+          const data = await res.json();
+          const certs = data.certificates || [];
+          const container = document.getElementById("certificates-container");
+
+          container.innerHTML = certs
+            .map(
+              (c) => `
+        <div class="certificate-card">
+          <div class="image-box">
+            <img src="${c.logo}" alt="${
+                c.name
+              } logo" onerror="this.style.display='none'" />
+          </div>
+          <div class="certificate-details">
+            <h4>${c.name}</h4>
+            <div class="certificate-meta">
+              <span class="institute">${c.institute}</span>
+              <span class="year">${c.year}</span>
+            </div>
+          </div>
+          ${
+            c.link
+              ? `<a href="${c.link}" target="_blank" rel="noopener" class="view-btn">View Certificate</a>`
+              : ""
+          }
+        </div>`
+            )
+            .join("");
+        } catch (e) {
+          console.error("Failed to load certificates:", e);
+        }
+      }
+
+      /* Run all dynamic sections after DOM load */
+      document.addEventListener("DOMContentLoaded", () => {
+        loadSkillsData();
+        loadProjects();
+        loadCertificates();
+      });
+    </script>
+  </body>
+</html>
