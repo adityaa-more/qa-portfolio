@@ -38,6 +38,7 @@ The website dynamically loads content (Projects, Skills, and Certifications) fro
 ---
 
 ## 📁 Folder Structure
+```
 qa-portfolio/
 │
 ├── index.html
@@ -47,7 +48,7 @@ qa-portfolio/
   ├── certificates.json
   ├── CV.pdf
   └── favicon.png
-
+```
 
 ## 🚀 How to Run Locally
 1. Clone this repository  
