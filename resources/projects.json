@@ -4,11 +4,11 @@
     "icon": "🛒",
 
     "description": [
-      "Designed and executed 200+ manual test cases in TestRail covering Functional, Regression, and Integration testing, with Jira for defect tracking and reporting.",
-      "Performed UI, API, and database validation to ensure end-to-end functionality and data consistency.",
-      "Automated core modules — Login, Product Search, Add to Cart, and Checkout — using Selenium WebDriver, Java, and TestNG.",
-      "Implemented Page Object Model (POM) and Data-Driven Testing (DDT) frameworks integrated with Jenkins CI/CD pipelines, generating detailed Allure and Extent Reports.",
-      "Enhanced regression suite efficiency by 40% through reusable scripts, centralized test management, and consistent coverage across builds."
+      "➥ Designed and executed 200+ manual test cases in TestRail covering Functional, Regression, and Integration testing, with Jira for defect tracking and reporting.",
+      "➥ Performed UI, API, and database validation to ensure end-to-end functionality and data consistency.",
+      "➥ Automated core modules — Login, Product Search, Add to Cart, and Checkout — using Selenium WebDriver, Java, and TestNG.",
+      "➥ Implemented Page Object Model (POM) and Data-Driven Testing (DDT) frameworks integrated with Jenkins CI/CD pipelines, generating detailed Allure and Extent Reports.",
+      "➥ Enhanced regression suite efficiency by 40% through reusable scripts, centralized test management, and consistent coverage across builds."
     ],
 
     "tools": [
@@ -63,11 +63,11 @@
     "icon": "🏦",
 
     "description": [
-      "Executed 80+ manual test cases in TestRail covering Functional, Regression, and Integration testing across core banking modules like Fund Transfers, Dashboard, and Card Management.",
-      "Validated end-to-end workflows including UI, transaction history, and API responses ensuring accurate account balances and data consistency.",
-      "Managed defect lifecycle in Jira — from logging to closure — collaborating with developers to resolve high-severity bugs.",
-      "Performed negative, usability, and cross-browser testing to ensure smooth performance and responsiveness across Chrome, Edge, and Firefox.",
-      "Delivered detailed test reports and traceability matrix improving overall release quality and test coverage within Agile sprints."
+      "➥ Executed 80+ manual test cases in TestRail covering Functional, Regression, and Integration testing across core banking modules like Fund Transfers, Dashboard, and Card Management.",
+      "➥ Validated end-to-end workflows including UI, transaction history, and API responses ensuring accurate account balances and data consistency.",
+      "➥ Managed defect lifecycle in Jira — from logging to closure — collaborating with developers to resolve high-severity bugs.",
+      "➥ Performed negative, usability, and cross-browser testing to ensure smooth performance and responsiveness across Chrome, Edge, and Firefox.",
+      "➥ Delivered detailed test reports and traceability matrix improving overall release quality and test coverage within Agile sprints."
     ],
 
     "tools": [
@@ -102,11 +102,11 @@
     "icon": "📚",
 
     "description": [
-      "Designed and validated CRUD operations for endpoints like /books, /orders, and /status to ensure accurate API responses and error handling.",
-      "Performed positive, negative, and boundary testing using Postman Collections and Environments for organized, reusable workflows.",
-      "Implemented data-driven testing with dynamic variables and parameterized request data to enhance test flexibility and maintainability.",
-      "Executed automated regression runs via Postman Collection Runner and Newman, validating response codes, payloads, and JSON schema consistency.",
-      "Logged defects in Jira and maintained detailed test documentation aligned with SDLC and QA best practices."
+      "➥ Designed and validated CRUD operations for endpoints like /books, /orders, and /status to ensure accurate API responses and error handling.",
+      "➥ Performed positive, negative, and boundary testing using Postman Collections and Environments for organized, reusable workflows.",
+      "➥ Implemented data-driven testing with dynamic variables and parameterized request data to enhance test flexibility and maintainability.",
+      "➥ Executed automated regression runs via Postman Collection Runner and Newman, validating response codes, payloads, and JSON schema consistency.",
+      "➥ Logged defects in Jira and maintained detailed test documentation aligned with SDLC and QA best practices."
     ],
 
     "tools": [
