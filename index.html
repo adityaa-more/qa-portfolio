@@ -566,7 +566,7 @@
     <!-- =======================
          CONTACT
     ======================== -->
-    <section
+   <section
       id="contact"
       class="py-24 bg-gray-900 text-center relative overflow-hidden"
     >
@@ -646,6 +646,7 @@
           text-align: left;
           display: flex;
           flex-direction: column;
+          align-items: left;
           gap: 1.5rem;
           color: #e5e7eb;
           font-size: 1.05rem;
@@ -666,21 +667,6 @@
           border-color: rgba(34, 211, 238, 0.5);
           box-shadow: 0 0 20px rgba(34, 211, 238, 0.25);
           transform: translateY(-4px);
-        }
-
-        .contact-link img {
-          width: 26px;
-          height: 26px;
-          object-fit: contain;
-        }
-
-        .contact-link a {
-          color: #22d3ee;
-          transition: color 0.3s ease;
-        }
-
-        .contact-link a:hover {
-          color: #67e8f9;
         }
 
         #success-popup {
@@ -722,13 +708,15 @@
           }
         }
       </style>
+
       <h3 class="text-4xl font-bold text-cyan-400 mb-8 relative z-10">
         Contact
       </h3>
       <p class="text-gray-300 mb-10 relative z-10">
-        Get in touch directly by filling the form or reach out through any
-        platform 👇
+        Get in touch directly by filling the form or reach out through my
+        LinkedIn 👇
       </p>
+
       <div class="contact-container">
         <form id="contact-form" class="contact-form">
           <div class="mb-5">
@@ -753,35 +741,49 @@
           </div>
           <button type="submit" class="contact-btn">Send Message</button>
         </form>
+
         <div class="contact-links">
-          <div class="contact-link">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
-              alt="Gmail"
-            />
-            <a href="mailto:adityamore.se@gmail.com" target="_blank"
-              >adityamore.se@gmail.com</a
+          <!-- LinkedIn Badge -->
+          <div>
+            <script
+              src="https://platform.linkedin.com/badges/js/profile.js"
+              async
+              defer
+              type="text/javascript"
+            ></script>
+            <div
+              class="badge-base LI-profile-badge"
+              data-locale="en_US"
+              data-size="medium"
+              data-theme="dark"
+              data-type="VERTICAL"
+              data-vanity="adityaa-more"
+              data-version="v1"
             >
+              <a
+                class="badge-base__link LI-simple-link"
+                href="https://in.linkedin.com/in/adityaa-more?trk=profile-badge"
+              ></a>
+            </div>
           </div>
-          <div class="contact-link">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
-              alt="LinkedIn"
-            />
-            <a href="https://www.linkedin.com/in/adityaa-more" target="_blank"
-              >LinkedIn Profile</a
-            >
-          </div>
-          <div class="contact-link">
+
+          <!-- Phone Number -->
+          <div
+            class="contact-link"
+            style="justify-content: center; width: 250px"
+          >
             <img
               src="https://cdn-icons-png.flaticon.com/512/597/597177.png"
               alt="Phone"
+              style="width: 26px; height: 26px"
             />
             <span>+91 8888052888</span>
           </div>
         </div>
       </div>
+
       <div id="success-popup">✅ Message window opened! Ready to send.</div>
+
       <script>
         const form = document.getElementById("contact-form");
         const popup = document.getElementById("success-popup");
@@ -1171,5 +1173,6 @@
     </script>
   </body>
 </html>
+
 
 
