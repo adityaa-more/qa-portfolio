@@ -1,25 +1,26 @@
 {
   "certificates": [
     {
-      "name": "Core Java",
-      "institute": "Excel Computers",
-      "year": "2023",
-      "logo": "https://content.jdmagicbox.com/comp/kolhapur/f7/0231px231.x231.140602120031.g2f7/catalogue/excel-computers-rajarampuri-kolhapur-computer-training-institutes-9ogm3fj0x9.jpg",
-      "link": "xxx"
-    },
-    {
-      "name": "Web Devlopment Bootcamp",
-      "institute": "Udemy",
-      "year": "2023",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Udemy_logo.svg",
-      "link": "xxx"
-    },
-    {
       "name": "Software Testing (Manual + Automation)",
       "institute": "Q-Spiders",
       "year": "2025",
       "logo": "https://sbs.ac.in/wp-content/uploads/2024/01/QSpiders-logo.jpg",
       "link": "xxx"
+    },
+    {
+      "name": "Postman API Fundamentals Student Expert",
+      "institute": "Postman",
+      "year": "2025",
+      "logo": "https://img.favpng.com/24/20/0/postdot-technologies-pvt-ltd-api-testing-representational-state-transfer-computer-software-logo-png-favpng-pX1DBRXTC9tCVpMLDnpyEUz3p.jpg",
+      "link": "xxx"
+    },
+     {
+      "name": "Test Automation with Selenium WebDriver for Java",
+      "institute": "LinkedIn Learning",
+      "year": "2025",
+      "logo": "https://sm.pcmag.com/pcmag_me/review/l/linkedin-l/linkedin-learning_rruk.png",
+      "link": "xxx"
     }
   ]
 }
+
