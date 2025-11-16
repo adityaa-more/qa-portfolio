@@ -12,15 +12,16 @@
       "institute": "Postman",
       "year": "2025",
       "logo": "https://img.favpng.com/24/20/0/postdot-technologies-pvt-ltd-api-testing-representational-state-transfer-computer-software-logo-png-favpng-pX1DBRXTC9tCVpMLDnpyEUz3p.jpg",
-      "link": "xxx"
+      "link": "./resources/certificates/Postman API Fundamentals Student Expert.pdf"
     },
      {
       "name": "Test Automation with Selenium WebDriver for Java",
       "institute": "LinkedIn Learning",
       "year": "2025",
       "logo": "https://sm.pcmag.com/pcmag_me/review/l/linkedin-l/linkedin-learning_rruk.png",
-      "link": "xxx"
+      "link": "./resources/certificates/Test Automation with Selenium WebDriver for Java.pdf"
     }
   ]
 }
+
 
