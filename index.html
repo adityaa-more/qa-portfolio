@@ -1,1180 +1,568 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      href="./resources/favicon.png"
-      type="image/x-icon"
-    />
-    <title>Aditya More | QA Portfolio</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="./resources/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="./resources/favicon.png" type="image/png" sizes="256x256" />
+  <link rel="apple-touch-icon" href="./resources/apple-touch-icon.png" />
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+  <title>Aditya More — QA Automation Engineer &amp; SDET</title>
+  <meta name="description" content="Aditya More, QA automation engineer and SDET. Playwright and TypeScript suites, JMeter load tests, and a 0.01% defect leakage rate across five production apps." />
 
-    <style>
-      html {
-        scroll-behavior: smooth;
-        cursor: default;
-      }
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 
-      /* Prevent anchored sections from being hidden under fixed navbar */
-      /* Adjust 72px if your navbar height changes */
-      section {
-        scroll-margin-top: 72px;
-      }
-    </style>
-  </head>
+  <style>
+    :root {
+      --paper: #edeff2;
+      --surface: #f8f9fb;
+      --ink: #101318;
+      --muted: #525a67;
+      --rule: #c9ced6;
+      --pass: #137a43;
+      --fail: #c62f2f;
+      --marker: #ffe14d;
 
-  <body class="bg-gray-900 text-white font-sans">
-    <!-- ======================
-         NAVBAR
-    ======================== -->
-    <nav
-      class="fixed top-0 w-full z-50 bg-gray-900/50 backdrop-blur-sm border-b border-cyan-900/20 shadow-[0_2px_12px_rgba(2,6,23,0.25)] transition-all duration-300"
-    >
-      <div
-        class="container mx-auto flex justify-between items-center py-3 px-6"
-      >
-        <!-- Logo -->
-        <h1
-          class="text-2xl font-extrabold tracking-wide bg-gradient-to-r from-cyan-400 to-blue-300 bg-clip-text text-transparent"
-        >
-          Aditya More
-        </h1>
+      --console: #0e1116;
+      --console-text: #e6e9ee;
+      --console-dim: #8c94a3;
+      --console-pass: #4ade80;
+      --console-fail: #ff7b7b;
 
-        <!-- Hamburger (mobile) -->
-        <button
-          id="menu-btn"
-          class="block md:hidden text-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-300 rounded"
-          aria-expanded="false"
-          aria-controls="mobile-panel"
-          aria-label="Toggle navigation"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-7 w-7"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button>
+      --sans: 'Bricolage Grotesque', system-ui, sans-serif;
+      --mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+    }
 
-        <!-- Menu -->
-        <ul
-          id="menu"
-          class="hidden md:flex md:space-x-8 text-lg font-medium items-center md:justify-end"
-        >
-          <li>
-            <a href="#home" class="relative group px-2 py-1"
-              >Home
-              <span
-                class="absolute left-0 -bottom-1 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full"
-              ></span>
-            </a>
-          </li>
-          <li>
-            <a href="#core-competencies" class="relative group px-2 py-1"
-              >Skills
-              <span
-                class="absolute left-0 -bottom-1 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full"
-              ></span>
-            </a>
-          </li>
-          <li>
-            <a href="#projects" class="relative group px-2 py-1"
-              >Projects
-              <span
-                class="absolute left-0 -bottom-1 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full"
-              ></span>
-            </a>
-          </li>
-          <li>
-            <a href="#contact" class="relative group px-2 py-1"
-              >Contact
-              <span
-                class="absolute left-0 -bottom-1 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full"
-              ></span>
-            </a>
-          </li>
-        </ul>
-      </div>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 1.0625rem;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::selection { background: var(--marker); color: var(--ink); }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { text-decoration-thickness: 2px; }
+    :focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; border-radius: 2px; }
+    button { font: inherit; color: inherit; cursor: pointer; }
+    h1, h2, h3, h4, p, ul, dl, dd { margin: 0; }
+    ul { padding: 0; list-style: none; }
 
-      <!-- Mobile panel (will be toggled visible) -->
-      <div
-        id="mobile-panel"
-        class="hidden md:hidden fixed left-4 right-4 top-16 z-40 rounded-xl bg-gray-900/60 backdrop-blur-sm border border-cyan-900/10 shadow-lg py-6"
-      >
-        <ul class="flex flex-col items-center gap-6">
-          <li>
-            <a href="#home" class="text-lg font-medium" data-close>Home</a>
-          </li>
-          <li>
-            <a href="#core-competencies" class="text-lg font-medium" data-close
-              >Skills</a
-            >
-          </li>
-          <li>
-            <a href="#projects" class="text-lg font-medium" data-close
-              >Projects</a
-            >
-          </li>
-          <li>
-            <a href="#contact" class="text-lg font-medium" data-close
-              >Contact</a
-            >
-          </li>
-        </ul>
-      </div>
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+    .skip { position: absolute; left: -9999px; }
+    .skip:focus { left: 24px; top: 12px; background: var(--ink); color: var(--paper); padding: 8px 14px; z-index: 10; }
 
-      <script>
-        (function () {
-          const menuBtn = document.getElementById("menu-btn");
-          const desktopMenu = document.getElementById("menu");
-          const mobilePanel = document.getElementById("mobile-panel");
+    /* ---------- Top bar ---------- */
+    .bar { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 32px; padding: 22px 0; }
+    .bar-name { font-weight: 800; font-size: 1.125rem; letter-spacing: -0.01em; text-decoration: none; }
+    .bar nav { display: flex; flex-wrap: wrap; gap: 4px 24px; font-size: 0.9375rem; }
+    .bar nav a { text-decoration: none; padding: 4px 0; }
+    .bar nav a:hover { text-decoration: underline; text-decoration-thickness: 2px; }
 
-          // Toggle mobile panel (do NOT change icon)
-          menuBtn.addEventListener("click", () => {
-            const open = !mobilePanel.classList.contains("hidden");
-            if (open) {
-              // close
-              mobilePanel.classList.add("hidden");
-              menuBtn.setAttribute("aria-expanded", "false");
-            } else {
-              // open
-              mobilePanel.classList.remove("hidden");
-              menuBtn.setAttribute("aria-expanded", "true");
-            }
-          });
+    /* ---------- Hero ---------- */
+    .hero { padding: 56px 0 48px; }
+    h1 {
+      font-size: clamp(2.75rem, 8.4vw, 6.25rem);
+      line-height: 0.98;
+      letter-spacing: -0.035em;
+      font-weight: 800;
+      max-width: 13ch;
+      font-variation-settings: 'opsz' 96;
+    }
+    .hero-intro { margin-top: 32px; max-width: 58ch; font-size: 1.1875rem; line-height: 1.55; }
+    .hero-meta { margin-top: 14px; color: var(--muted); font-size: 0.9375rem; }
+    .hero-actions { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px; }
 
-          // Close mobile panel when clicking any mobile link
-          document.querySelectorAll("[data-close]").forEach((el) => {
-            el.addEventListener("click", () => {
-              if (window.innerWidth < 768) {
-                mobilePanel.classList.add("hidden");
-                menuBtn.setAttribute("aria-expanded", "false");
-              }
-            });
-          });
+    .btn {
+      display: inline-block; padding: 11px 20px; border: 2px solid var(--ink); border-radius: 4px;
+      text-decoration: none; font-weight: 700; font-size: 0.9375rem; background: transparent;
+      transition: transform 0.1s ease;
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn-solid { background: var(--ink); color: var(--paper); }
+    .btn-solid:hover { background: #262b34; text-decoration: none; }
+    .btn-line:hover { background: var(--marker); text-decoration: none; }
 
-          // Ensure desktop menu shows/hides correctly on resize
-          window.addEventListener("resize", () => {
-            if (window.innerWidth >= 768) {
-              mobilePanel.classList.add("hidden");
-              menuBtn.setAttribute("aria-expanded", "false");
-            }
-          });
-        })();
-      </script>
-    </nav>
+    /* ---------- Test report (the hero moment) ---------- */
+    .report { background: var(--console); color: var(--console-text); border-radius: 6px; overflow: hidden; margin-bottom: 72px; }
+    .report-bar {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 20px;
+      padding: 10px 16px; border-bottom: 1px solid #222833; font-size: 0.875rem;
+    }
+    .tabs { display: flex; flex-wrap: wrap; gap: 4px; }
+    .tab {
+      background: transparent; border: 1px solid transparent; border-radius: 4px; padding: 5px 12px;
+      color: var(--console-dim); font-size: 0.875rem;
+    }
+    .tab:hover { color: var(--console-text); }
+    .tab[aria-pressed="true"] { background: #1c222c; color: #fff; border-color: #2f3744; }
+    .report :focus-visible { outline-color: var(--marker); }
+    .report-tools { display: flex; align-items: center; gap: 14px; color: var(--console-dim); }
+    .replay { background: transparent; border: 1px solid #2f3744; border-radius: 4px; padding: 5px 12px; color: var(--console-text); font-size: 0.875rem; }
+    .replay:hover { background: #1c222c; }
+    .replay[disabled] { opacity: 0.4; cursor: default; }
 
-    <!-- =======================
-         HERO SECTION
-    ======================== -->
-    <section
-      id="home"
-      class="min-h-screen flex flex-col justify-center items-center text-center px-6"
-    >
-      <!-- Availability Badge -->
-      <div class="mb-6 flex justify-center">
-        <div
-          class="relative inline-flex items-center px-2.5 py-1 rounded-full border border-cyan-400 text-cyan-100 bg-gray-900/40 backdrop-blur-md transition-all duration-300 hover:shadow-[0_0_25px_rgba(34,211,238,0.6)]"
-          title="Available for New Opportunities"
-          aria-label="Available for New Opportunities"
-        >
-          <span class="absolute left-3 flex items-center">
-            <span
-              class="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-cyan-400 opacity-60"
-            ></span>
-            <span
-              class="relative inline-flex h-2 w-2 rounded-full bg-cyan-400"
-            ></span>
-          </span>
-          <span class="font-medium text-[10px] sm:text-xs md:text-sm ml-5">
-            Available for New Opportunities
-          </span>
+    .report-grid { display: grid; grid-template-columns: minmax(0, 1fr) 300px; }
+    .log {
+      font-family: var(--mono); font-size: 0.8125rem; line-height: 1.75; padding: 18px 20px;
+      min-height: 288px; border-right: 1px solid #222833; overflow-x: auto;
+    }
+    .log .ln { white-space: pre-wrap; padding-left: 2ch; text-indent: -2ch; }
+    .ln-cmd { color: var(--console-dim); }
+    .ln-cmd::before { content: '$ '; color: var(--console-text); }
+    .ln-pass { color: var(--console-pass); }
+    .ln-fail { color: var(--console-fail); font-weight: 700; }
+    .ln-info { color: var(--console-dim); padding-left: 4ch !important; }
+    .ln-exp, .ln-rec { margin-left: 4ch; padding: 0 10px !important; text-indent: 0 !important; width: fit-content; max-width: calc(100% - 4ch); }
+    .ln-exp { background: rgba(74, 222, 128, 0.14); color: var(--console-pass); }
+    .ln-rec { background: rgba(255, 123, 123, 0.16); color: var(--console-fail); }
+    .ln-sum { margin-top: 10px; padding-top: 10px; border-top: 1px solid #222833; color: #fff; font-weight: 700; }
+
+    .totals { padding: 18px 20px; display: grid; gap: 18px; align-content: start; }
+    .totals dt { font-size: 0.8125rem; color: var(--console-dim); }
+    .totals dd { font-size: 2.125rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; color: #fff; }
+    .totals dd small { display: block; margin-top: 2px; font-size: 0.8125rem; font-weight: 400; letter-spacing: 0; color: var(--console-dim); }
+
+    /* ---------- Sections ---------- */
+    .sec { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 16px 40px; border-top: 2px solid var(--ink); padding: 22px 0 80px; }
+    .sec-head h2 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; }
+    .sec-head p { margin-top: 6px; color: var(--muted); font-size: 0.9375rem; line-height: 1.45; }
+
+    /* Projects: expandable report rows */
+    .proj { border-bottom: 1px solid var(--rule); }
+    .proj:first-child { margin-top: -10px; }
+    .proj summary {
+      list-style: none; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 24px; align-items: baseline;
+      padding: 18px 0; cursor: pointer;
+    }
+    .proj summary::-webkit-details-marker { display: none; }
+    .proj summary:hover .proj-title { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+    .proj-title { font-size: 1.375rem; font-weight: 700; letter-spacing: -0.015em; line-height: 1.25; }
+    .proj-role { grid-column: 1; color: var(--muted); font-size: 0.9375rem; }
+    .proj-result { grid-column: 2; grid-row: 1 / span 2; align-self: center; text-align: right; font-weight: 700; color: var(--pass); max-width: 15ch; line-height: 1.3; }
+    .proj-result::after { content: '+'; display: inline-block; margin-left: 14px; color: var(--ink); font-weight: 400; font-size: 1.5rem; line-height: 1; vertical-align: -2px; }
+    .proj[open] .proj-result::after { content: '\2212'; }
+
+    .proj-body { padding: 4px 0 30px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 22px; max-width: 70ch; }
+    .proj-body h4 { font-size: 0.9375rem; font-weight: 700; margin-bottom: 4px; }
+    .proj-facts { display: flex; flex-wrap: wrap; gap: 8px 36px; font-size: 0.9375rem; }
+    .proj-facts dt { color: var(--muted); font-size: 0.8125rem; }
+    .proj-facts dd { font-weight: 700; }
+    .proj-body ul { display: grid; gap: 6px; }
+    .proj-body li { padding-left: 1.2em; position: relative; }
+    .proj-body li::before { content: ''; position: absolute; left: 0; top: 0.72em; width: 7px; height: 2px; background: var(--ink); }
+    pre.code {
+      margin: 0; padding: 16px 18px; background: var(--console); color: var(--console-text); border-radius: 4px;
+      font-family: var(--mono); font-size: 0.8125rem; line-height: 1.65; overflow-x: auto;
+    }
+
+    /* Writing */
+    .piece { padding: 0 0 32px; margin-bottom: 32px; border-bottom: 1px solid var(--rule); }
+    .piece:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+    .piece-kind { color: var(--muted); font-size: 0.875rem; }
+    .piece h3 { margin-top: 4px; font-size: 1.625rem; line-height: 1.2; letter-spacing: -0.02em; font-weight: 700; max-width: 26ch; }
+    .piece p { margin-top: 10px; max-width: 62ch; }
+    .link-btn { margin-top: 14px; background: none; border: 0; padding: 4px 0; font-weight: 700; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
+    .link-btn:hover { background: var(--marker); }
+
+    /* Skills */
+    .skills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 40px; }
+    .skills h3 { font-size: 1.0625rem; font-weight: 700; padding-bottom: 8px; border-bottom: 1px solid var(--ink); }
+    .skills li { padding: 7px 0; border-bottom: 1px solid var(--rule); font-size: 0.9688rem; }
+    .tools { grid-column: 1 / -1; max-width: 70ch; }
+    .tools h3 { margin-bottom: 8px; }
+    .tools p { font-size: 0.9688rem; }
+
+    /* Contact */
+    .contact-mail {
+      display: inline-block; font-size: clamp(1.5rem, 4.6vw, 3rem); font-weight: 800; letter-spacing: -0.03em;
+      line-height: 1.1; overflow-wrap: anywhere; text-decoration-thickness: 3px; text-underline-offset: 6px;
+    }
+    .contact-mail:hover { background: var(--marker); text-decoration-thickness: 3px; }
+    .contact-row { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 8px 28px; font-size: 1rem; align-items: center; }
+    .contact-note { margin-top: 18px; color: var(--muted); max-width: 52ch; font-size: 0.9688rem; }
+    .copy { background: none; border: 0; padding: 4px 0; text-decoration: underline; text-underline-offset: 3px; }
+    .copy:hover { background: var(--marker); }
+    .copy-status { min-height: 1.5em; color: var(--pass); font-weight: 700; font-size: 0.9375rem; }
+
+    footer { border-top: 2px solid var(--ink); padding: 20px 0 40px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; color: var(--muted); font-size: 0.875rem; }
+
+    /* ---------- Reader dialog ---------- */
+    dialog.reader { width: min(720px, calc(100vw - 24px)); max-height: calc(100vh - 32px); padding: 0; border: 2px solid var(--ink); border-radius: 6px; background: var(--surface); color: var(--ink); }
+    dialog.reader::backdrop { background: rgba(16, 19, 24, 0.7); }
+    .reader-head { position: sticky; top: 0; display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; padding: 18px 24px; background: var(--surface); border-bottom: 1px solid var(--rule); }
+    .reader-head h3 { font-size: 1.25rem; line-height: 1.25; letter-spacing: -0.015em; max-width: 30ch; }
+    .reader-close { flex: none; background: transparent; border: 2px solid var(--ink); border-radius: 4px; padding: 4px 12px; font-weight: 700; }
+    .reader-close:hover { background: var(--marker); }
+    .reader-body { padding: 22px 24px 30px; display: grid; gap: 14px; line-height: 1.65; }
+    .reader-body h4 { font-size: 1.125rem; margin-top: 8px; }
+    .reader-body ul { display: grid; gap: 8px; list-style: disc; padding-left: 1.2em; }
+    .reader-body code { font-family: var(--mono); font-size: 0.875em; background: #e3e6eb; padding: 1px 5px; border-radius: 3px; }
+    .reader-body .note { color: var(--muted); font-size: 0.9375rem; }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 860px) {
+      .sec { grid-template-columns: minmax(0, 1fr); padding-bottom: 56px; }
+      .proj:first-child { margin-top: 0; }
+      .report-grid { grid-template-columns: 1fr; }
+      .log { border-right: 0; border-bottom: 1px solid #222833; min-height: 260px; }
+      .totals { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+      .totals dd { font-size: 1.5rem; }
+    }
+    @media (max-width: 560px) {
+      body { font-size: 1rem; }
+      .wrap { padding: 0 16px; }
+      .hero { padding-top: 32px; }
+      .proj summary { grid-template-columns: minmax(0, 1fr); }
+      .proj-result { grid-column: 1; grid-row: auto; text-align: left; max-width: none; margin-top: 4px; }
+      .skills { grid-template-columns: 1fr; }
+      .totals { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .btn { transition: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip" href="#work">Skip to projects</a>
+
+  <div class="wrap">
+    <header class="bar">
+      <a class="bar-name" href="#top">Aditya More</a>
+      <nav aria-label="Primary">
+        <a href="#work">Projects</a>
+        <a href="#writing">Writing</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <a href="./resources/Aditya_More_QA_Automation_Engineer_CV.pdf" download>Download CV</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="headline">
+        <h1 id="headline">I test what the happy path skips.</h1>
+        <p class="hero-intro">
+          I'm a QA automation engineer and SDET at Nimap Infotech. I build Playwright and TypeScript suites,
+          load-test with JMeter, and have held a 0.01% defect leakage rate across five production apps.
+        </p>
+        <p class="hero-meta">Open to QA automation and SDET roles in Mumbai or remote.</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="#work">See the projects</a>
+          <a class="btn btn-line" href="./resources/Aditya_More_QA.pdf" download>Download CV</a>
         </div>
-      </div>
+      </section>
 
-      <!-- Hero Heading -->
-      <h2
-        class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-cyan-400 mb-3 md:mb-4 animate-bounce"
-      >
-        Hi, I'm Aditya More 👋
-      </h2>
-
-      <!-- Description -->
-      <p
-        class="text-sm sm:text-base md:text-xl text-gray-300 max-w-xl sm:max-w-2xl leading-relaxed"
-      >
-        QA Engineer passionate about
-        <span class="text-cyan-400">Manual, Automation, and API Testing</span>.
-        Focused on improving software quality, performance, and user
-        satisfaction.
-      </p>
-
-      <!-- Buttons -->
-      <div class="mt-8 flex flex-wrap justify-center gap-4 sm:gap-5">
-        <a
-          href="#contact"
-          class="group relative overflow-hidden rounded-full px-6 sm:px-8 py-2.5 font-semibold text-black transition-all duration-300 bg-cyan-500 hover:bg-cyan-600 hover:shadow-[0_0_20px_rgba(34,211,238,0.7)]"
-        >
-          <span class="relative z-10">Contact Me</span>
-          <span
-            class="absolute inset-0 bg-cyan-400 opacity-0 group-hover:opacity-20 transition-opacity"
-          ></span>
-        </a>
-
-        <a
-          href="./resources/Aditya_More_QA.pdf"
-          download
-          class="group relative overflow-hidden rounded-full border border-cyan-400 px-6 sm:px-8 py-2.5 font-semibold text-cyan-400 transition-all duration-300 hover:text-black hover:border-transparent hover:shadow-[0_0_25px_rgba(34,211,238,0.6)]"
-        >
-          <span class="relative z-10">Download Resume</span>
-          <span
-            class="absolute inset-0 bg-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity"
-          ></span>
-        </a>
-      </div>
-    </section>
-
-    <!-- =======================
-     CORE COMPETENCIES
-  ======================== -->
-    <section
-      id="core-competencies"
-      class="py-24 bg-gray-900 text-center relative overflow-hidden"
-    >
-      <!-- Fade transition to next section -->
-      <div
-        class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-gray-900/90 pointer-events-none"
-      ></div>
-
-      <h3
-        id="competencies-title"
-        class="text-4xl font-bold text-cyan-400 mb-16 opacity-0 translate-y-4 transition-all duration-700 text-center"
-      >
-        Core Competencies
-      </h3>
-
-      <div
-        id="competencies-container"
-        class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-6 opacity-0 translate-y-6 transition-all duration-700"
-      ></div>
-    </section>
-
-    <!-- =======================
-     TECH STACK
-  ========================= -->
-    <section
-      id="tech-stack"
-      class="py-20 bg-gray-900 text-center relative overflow-hidden"
-    >
-      <h3
-        id="techstack-title"
-        class="text-4xl font-bold text-cyan-400 mb-12 opacity-0 translate-y-4 transition-all duration-700 text-center"
-      >
-        Technical Stack
-      </h3>
-
-      <div
-        class="max-w-6xl mx-auto px-6 py-12 rounded-3xl border border-gray-800 bg-gradient-to-b from-gray-900 to-gray-950 shadow-[inset_0_5px_15px_rgba(0,0,0,0.6),inset_0_-5px_15px_rgba(34,211,238,0.1)]"
-      >
-        <div
-          id="techstack-container"
-          class="flex flex-wrap justify-center items-center gap-6 opacity-0 translate-y-6 transition-all duration-700"
-        ></div>
-      </div>
-    </section>
-
-    <!-- =======================
-         PROJECTS
-    ======================== -->
-    <section
-      id="projects"
-      class="py-24 bg-gray-900 text-center relative overflow-hidden"
-    >
-      <style>
-        /* Glow line animation */
-        @keyframes glowLine {
-          0% {
-            box-shadow: 0 0 10px rgba(34, 211, 238, 0.35);
-          }
-
-          50% {
-            box-shadow: 0 0 30px rgba(34, 211, 238, 0.85);
-          }
-
-          100% {
-            box-shadow: 0 0 10px rgba(34, 211, 238, 0.35);
-          }
-        }
-
-        .timeline-line {
-          animation: glowLine 3s infinite ease-in-out;
-        }
-
-        /* Entry animation and focus styling */
-        .proj-card {
-          transition: transform 0.6s ease, opacity 0.6s ease,
-            box-shadow 0.6s ease, border-color 0.6s ease;
-          opacity: 0.6;
-          transform: translateY(20px) scale(0.96);
-          z-index: 0;
-        }
-
-        .proj-card.visible {
-          opacity: 1;
-          transform: translateY(0) scale(0.98);
-        }
-
-        /* focused card (center on scroll) */
-        .proj-card.active {
-          transform: translateY(-10px) scale(1.06);
-          opacity: 1;
-          z-index: 30;
-          box-shadow: 0 12px 30px rgba(34, 211, 238, 0.18);
-          border-color: rgba(34, 211, 238, 0.5);
-        }
-
-        /* connector dot exactly on left border center of the card */
-        .dot {
-          position: absolute;
-          left: -0.75rem;
-          /* adjust if you change card padding/rounding */
-          top: 50%;
-          transform: translateY(-50%);
-          width: 1.25rem;
-          height: 1.25rem;
-          border-radius: 999px;
-          background: #22d3ee;
-          /* cyan-400 */
-          border: 4px solid #111827;
-          /* gray-900 border */
-          box-shadow: 0 0 8px rgba(34, 211, 238, 0.6);
-        }
-
-        /* tool badges */
-        .tool-badge {
-          display: inline-flex;
-          align-items: center;
-          gap: 0.5rem;
-          padding: 0.35rem 0.6rem;
-          border-radius: 999px;
-          background: rgba(15, 23, 42, 0.6);
-          border: 1px solid rgba(56, 189, 248, 0.06);
-          font-size: 0.9rem;
-          color: #9beafe;
-          transition: transform 0.22s ease, box-shadow 0.22s ease;
-        }
-
-        .tool-badge img {
-          width: 20px;
-          height: 20px;
-          object-fit: contain;
-          border-radius: 4px;
-          filter: drop-shadow(0 0 2px rgba(34, 211, 238, 0.25));
-        }
-
-        .tool-badge:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 8px 22px rgba(34, 211, 238, 0.12);
-        }
-
-        /* responsive tweak: hide dots & timeline on small screens */
-        @media (max-width: 768px) {
-          .timeline-line,
-          .dot {
-            display: none;
-          }
-        }
-      </style>
-
-      <h3 class="text-4xl font-bold text-cyan-400 mb-16">Projects</h3>
-
-      <!-- Left vertical glowing line (position left in page) -->
-      <div
-        class="absolute left-[12%] top-40 bottom-20 w-1 bg-cyan-500 rounded-full timeline-line hidden md:block"
-      ></div>
-
-      <!-- container where cards will be injected -->
-      <div
-        id="projects-container"
-        class="max-w-5xl mx-auto flex flex-col items-center gap-10 relative px-6"
-      ></div>
-    </section>
-
-    <!-- =======================
-         CERTIFICATIONS
-    ======================== -->
-    <section id="certificates" class="py-24 bg-gray-900 text-center">
-      <h3 class="text-4xl font-bold text-cyan-400 mb-12">Certifications</h3>
-
-      <div
-        id="certificates-container"
-        class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6"
-      ></div>
-
-      <style>
-        /* ==== Unified Matte Certificate Card (Same as Projects Section) ==== */
-        .certificate-card {
-          position: relative;
-          background: #1f2937;
-          border: 1.5px solid rgba(34, 211, 238, 0.12);
-          border-radius: 0.75rem;
-          padding: 1.25rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          text-align: left;
-          height: 250px;
-          transition: all 0.3s ease;
-          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-        }
-
-        /* Subtle black hover effect (no glow) */
-        .certificate-card:hover {
-          border-color: rgba(34, 211, 238, 0.25);
-          transform: translateY(-3px);
-          box-shadow: 0 8px 22px rgba(0, 0, 0, 0.4);
-          /* dark shadow instead of cyan */
-        }
-
-        /* Image box (same matte style) */
-        .certificate-card .image-box {
-          width: 100%;
-          height: 40%;
-          background: rgba(15, 23, 42, 0.6);
-          border-radius: 0.5rem;
-          border: 1.5px solid rgba(34, 211, 238, 0.12);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin-bottom: 1rem;
-          overflow: hidden;
-        }
-
-        .certificate-card img {
-          width: 70%;
-          height: 100%;
-          object-fit: cover;
-          opacity: 0.9;
-          border-radius: 0.5rem;
-        }
-
-        /* Certificate details */
-        .certificate-details {
-          flex-grow: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          gap: 0.6rem;
-        }
-
-        .certificate-details h4 {
-          color: #22d3ee;
-          /* cyan title */
-          font-weight: 600;
-          font-size: 1.05rem;
-          margin: 0;
-          letter-spacing: 0.3px;
-        }
-
-        .certificate-meta {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        }
-
-        .certificate-meta .institute {
-          color: #b5c9d1;
-          font-size: 0.9rem;
-          font-weight: 500;
-        }
-
-        .certificate-meta .year {
-          color: #67e8f9;
-          font-size: 0.9rem;
-          font-weight: 500;
-        }
-
-        /* Button — matches tool badges style */
-        .view-btn {
-          align-self: flex-end;
-          margin-top: 0.8rem;
-          background: rgba(15, 23, 42, 0.6);
-          border: 1px solid rgba(34, 211, 238, 0.25);
-          color: #9beafe;
-          border-radius: 999px;
-          padding: 0.4rem 0.8rem;
-          font-size: 0.85rem;
-          font-weight: 500;
-          text-decoration: none;
-          display: inline-flex;
-          align-items: center;
-          gap: 0.4rem;
-          transition: all 0.25s ease;
-        }
-
-        .view-btn:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 8px 22px rgba(0, 0, 0, 0.4);
-          /* dark shadow instead of cyan */
-          border-color: rgba(34, 211, 238, 0.35);
-          color: #e0faff;
-          background: #000;
-          /* subtle black hover */
-        }
-
-        /* Optional: badge tag (same as tools section) */
-        .certificate-tag {
-          display: inline-flex;
-          align-items: center;
-          gap: 0.4rem;
-          padding: 0.35rem 0.6rem;
-          border-radius: 999px;
-          background: rgba(15, 23, 42, 0.6);
-          border: 1px solid rgba(34, 211, 238, 0.08);
-          font-size: 0.85rem;
-          color: #9beafe;
-          transition: transform 0.22s ease, box-shadow 0.22s ease;
-        }
-
-        .certificate-tag:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Responsive */
-        @media (max-width: 640px) {
-          .certificate-card {
-            width: 100%;
-            height: auto;
-          }
-        }
-      </style>
-    </section>
-
-    <!-- =======================
-         CONTACT
-    ======================== -->
-   <section
-      id="contact"
-      class="py-24 bg-gray-900 text-center relative overflow-hidden"
-    >
-      <style>
-        #contact::before {
-          content: "";
-          position: absolute;
-          inset: 0;
-          background: radial-gradient(
-            circle at 50% 0%,
-            rgba(34, 211, 238, 0.08),
-            transparent 70%
-          );
-          z-index: 0;
-        }
-
-        .contact-container {
-          display: flex;
-          justify-content: center;
-          align-items: flex-start;
-          flex-wrap: wrap;
-          gap: 3rem;
-          max-width: 1100px;
-          margin: 0 auto;
-          position: relative;
-          z-index: 10;
-        }
-
-        .contact-form {
-          flex: 1 1 55%;
-          background: rgba(17, 24, 39, 0.9);
-          border: 1px solid rgba(34, 211, 238, 0.15);
-          box-shadow: 0 0 20px rgba(34, 211, 238, 0.1);
-          border-radius: 1rem;
-          padding: 2rem;
-          transition: box-shadow 0.3s ease, border-color 0.3s ease;
-        }
-
-        .contact-form:hover {
-          box-shadow: 0 0 25px rgba(34, 211, 238, 0.2);
-          border-color: rgba(34, 211, 238, 0.3);
-        }
-
-        .contact-input {
-          width: 100%;
-          background: #111827;
-          border: 1px solid #374151;
-          color: #e5e7eb;
-          border-radius: 0.5rem;
-          padding: 0.75rem 1rem;
-          transition: all 0.3s ease;
-        }
-
-        .contact-input:focus {
-          border-color: #22d3ee;
-          box-shadow: 0 0 10px rgba(34, 211, 238, 0.2);
-          outline: none;
-        }
-
-        .contact-btn {
-          background: #22d3ee;
-          color: #000;
-          font-weight: 600;
-          border-radius: 0.5rem;
-          padding: 0.75rem;
-          transition: all 0.3s ease;
-          width: 100%;
-        }
-
-        .contact-btn:hover {
-          background: #06b6d4;
-          box-shadow: 0 0 20px rgba(34, 211, 238, 0.4);
-        }
-
-        .contact-links {
-          flex: 1 1 35%;
-          text-align: left;
-          display: flex;
-          flex-direction: column;
-          align-items: left;
-          gap: 1.5rem;
-          color: #e5e7eb;
-          font-size: 1.05rem;
-        }
-
-        .contact-link {
-          display: flex;
-          align-items: center;
-          gap: 0.8rem;
-          background: rgba(17, 24, 39, 0.8);
-          border: 1px solid rgba(34, 211, 238, 0.15);
-          padding: 0.9rem 1rem;
-          border-radius: 0.75rem;
-          transition: all 0.3s ease;
-        }
-
-        .contact-link:hover {
-          border-color: rgba(34, 211, 238, 0.5);
-          box-shadow: 0 0 20px rgba(34, 211, 238, 0.25);
-          transform: translateY(-4px);
-        }
-
-        #success-popup {
-          position: fixed;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%) scale(0.9);
-          background: #0f172a;
-          border: 1px solid rgba(34, 211, 238, 0.4);
-          color: #a5f3fc;
-          padding: 1.5rem 2rem;
-          border-radius: 1rem;
-          box-shadow: 0 0 25px rgba(34, 211, 238, 0.3);
-          opacity: 0;
-          z-index: 1000;
-          transition: all 0.3s ease;
-        }
-
-        #success-popup.show {
-          opacity: 1;
-          transform: translate(-50%, -50%) scale(1);
-        }
-
-        @media (max-width: 900px) {
-          .contact-container {
-            flex-direction: column;
-            align-items: center;
-          }
-
-          .contact-links {
-            align-items: center;
-            text-align: center;
-          }
-
-          .contact-link {
-            justify-content: center;
-            width: 100%;
-            max-width: 400px;
-          }
-        }
-      </style>
-
-      <h3 class="text-4xl font-bold text-cyan-400 mb-8 relative z-10">
-        Contact
-      </h3>
-      <p class="text-gray-300 mb-10 relative z-10">
-        Get in touch directly by filling the form or reach out through my
-        LinkedIn 👇
-      </p>
-
-      <div class="contact-container">
-        <form id="contact-form" class="contact-form">
-          <div class="mb-5">
-            <input
-              type="text"
-              id="subject"
-              name="subject"
-              placeholder="Subject"
-              required
-              class="contact-input"
-            />
+      <!-- The run: one orchestrated moment on load -->
+      <section class="report" aria-label="Simulated test run">
+        <div class="report-bar">
+          <div class="tabs" id="tabs" role="group" aria-label="Choose a test run">
+            <button class="tab" type="button" data-sim="shipment" aria-pressed="true">Shipment app</button>
+            <button class="tab" type="button" data-sim="load" aria-pressed="false">POS load test</button>
+            <button class="tab" type="button" data-sim="bot" aria-pressed="false">WhatsApp bot</button>
           </div>
-          <div class="mb-5">
-            <textarea
-              id="message"
-              name="message"
-              rows="5"
-              placeholder="Your message..."
-              required
-              class="contact-input"
-            ></textarea>
+          <div class="report-tools">
+            <span>Simulated run</span>
+            <button class="replay" type="button" id="replay">Run again</button>
           </div>
-          <button type="submit" class="contact-btn">Send Message</button>
-        </form>
-
-        <div class="contact-links">
-          <!-- LinkedIn Badge -->
-          <div>
-            <script
-              src="https://platform.linkedin.com/badges/js/profile.js"
-              async
-              defer
-              type="text/javascript"
-            ></script>
-            <div
-              class="badge-base LI-profile-badge"
-              data-locale="en_US"
-              data-size="medium"
-              data-theme="dark"
-              data-type="VERTICAL"
-              data-vanity="adityaa-more"
-              data-version="v1"
-            >
-              <a
-                class="badge-base__link LI-simple-link"
-                href="https://in.linkedin.com/in/adityaa-more?trk=profile-badge"
-              ></a>
+        </div>
+        <div class="report-grid">
+          <div class="log" id="log" role="log" aria-live="polite" aria-label="Test output"></div>
+          <dl class="totals">
+            <div>
+              <dt>Defects escaped to UAT</dt>
+              <dd>0.01%<small>Industry norm is 2 to 5%</small></dd>
             </div>
+            <div>
+              <dt>Full regression run</dt>
+              <dd>14 min<small>Down from 4 hours by hand</small></dd>
+            </div>
+            <div>
+              <dt>Concurrent users load-tested</dt>
+              <dd>1,000+<small>On the retail POS APIs</small></dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="sec" id="work" aria-labelledby="work-h">
+        <div class="sec-head">
+          <h2 id="work-h">Projects</h2>
+          <p>Five production systems tested at Nimap Infotech. Open a row for the risk, the build and a test excerpt.</p>
+        </div>
+        <div id="projects">
+          <p class="note">Loading projects…</p>
+        </div>
+      </section>
+
+      <section class="sec" id="writing" aria-labelledby="writing-h">
+        <div class="sec-head">
+          <h2 id="writing-h">Writing</h2>
+          <p>Two papers on where AI-assisted testing breaks down and how to guard against it.</p>
+        </div>
+        <div>
+          <article class="piece">
+            <div class="piece-kind">Research paper, 8 min read</div>
+            <h3>The edge case blindspot: why AI tools miss accidental distributed failures</h3>
+            <p>AI predicts the likeliest path, and production bugs live in the unlikely ones. Five integration failures that nominal-path testing never sees, from replica lag to webhook collisions.</p>
+            <button class="link-btn" type="button" data-article="blindspot">Read the paper</button>
+          </article>
+          <article class="piece">
+            <div class="piece-kind">Architecture spec, 10 min read</div>
+            <h3>10x regression automation: a production-grade AI QA framework</h3>
+            <p>A blueprint for self-healing locators, generated boundary fuzzing and database invariant checks that the AI is not allowed to overrule, built on Playwright and TypeScript.</p>
+            <button class="link-btn" type="button" data-article="framework">Read the spec</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="sec" id="skills" aria-labelledby="skills-h">
+        <div class="sec-head">
+          <h2 id="skills-h">Skills</h2>
+          <p>What I use day to day in production test suites.</p>
+        </div>
+        <div class="skills" id="skills-list">
+          <p class="note">Loading skills…</p>
+        </div>
+      </section>
+
+      <section class="sec" id="contact" aria-labelledby="contact-h">
+        <div class="sec-head">
+          <h2 id="contact-h">Contact</h2>
+          <p>Mumbai, India. Replies within a day.</p>
+        </div>
+        <div>
+          <a class="contact-mail" href="mailto:adityamore.se@gmail.com">adityamore.se@gmail.com</a>
+          <div class="contact-row">
+            <button class="copy" type="button" data-copy="adityamore.se@gmail.com" data-msg="Email copied">Copy email</button>
+            <a href="tel:+918888052888">+91 8888052888</a>
+            <a href="https://www.linkedin.com/in/adityaa-more" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://github.com/adityaa-more" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="./resources/Aditya_More_QA_Automation_Engineer_CV.pdf" download>Download CV</a>
           </div>
-
-          <!-- Phone Number -->
-          <div
-            class="contact-link"
-            style="justify-content: center; width: 250px"
-          >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/597/597177.png"
-              alt="Phone"
-              style="width: 26px; height: 26px"
-            />
-            <span>+91 8888052888</span>
-          </div>
+          <p class="copy-status" id="copy-status" role="status"></p>
+          <p class="contact-note">Hiring for QA automation or SDET? I'm also open to talking about test architecture, performance benchmarking and contract work.</p>
         </div>
-      </div>
+      </section>
+    </main>
 
-      <div id="success-popup">✅ Message window opened! Ready to send.</div>
-
-      <script>
-        const form = document.getElementById("contact-form");
-        const popup = document.getElementById("success-popup");
-        form.addEventListener("submit", (e) => {
-          e.preventDefault();
-          const subject = encodeURIComponent(
-            document.getElementById("subject").value
-          );
-          const message = encodeURIComponent(
-            document.getElementById("message").value
-          );
-          const mailtoLink = `mailto:adityamore.se@gmail.com?subject=${subject}&body=${message}`;
-          window.location.href = mailtoLink;
-          popup.classList.add("show");
-          setTimeout(() => popup.classList.remove("show"), 3000);
-          form.reset();
-        });
-      </script>
-    </section>
-
-    <!-- =======================
-         FOOTER
-    ======================== -->
-    <footer class="bg-gray-900 text-gray-400 py-8 border-t border-cyan-900/40">
-      <div
-        class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6"
-      >
-        <div class="text-center md:text-left">
-          <p class="text-cyan-400 font-semibold text-lg mb-1">Aditya More</p>
-          <p class="text-sm text-gray-400">
-            Built with 💻 using <span class="text-cyan-400">HTML</span> &
-            <span class="text-cyan-400">TailwindCSS</span>
-          </p>
-        </div>
-
-        <div class="flex space-x-8">
-          <a
-            href="https://www.linkedin.com/in/adityaa-more"
-            target="_blank"
-            aria-label="LinkedIn"
-            class="group transition transform hover:scale-110"
-          >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
-              alt="LinkedIn"
-              class="w-7 h-7 transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(34,211,238,0.8)]"
-            />
-          </a>
-
-          <a
-            href="https://github.com/adityaa-more"
-            target="_blank"
-            aria-label="GitHub"
-            class="group transition transform hover:scale-110"
-          >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/733/733553.png"
-              alt="GitHub"
-              class="w-7 h-7 transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(34,211,238,0.8)]"
-            />
-          </a>
-
-          <a
-            href="mailto:adityamore.se@gmail.com"
-            aria-label="Email"
-            class="group transition transform hover:scale-110"
-          >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
-              alt="Email"
-              class="w-7 h-7 transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(34,211,238,0.8)]"
-            />
-          </a>
-        </div>
-
-        <div class="text-center md:text-right text-sm text-gray-500">
-          © 2025 Aditya More. All rights reserved.
-        </div>
-      </div>
+    <footer>
+      <span>Aditya More, QA automation engineer and SDET</span>
+      <span>Mumbai, India</span>
     </footer>
+  </div>
 
-    <!-- =======================
-         SCRIPTS
-    ======================== -->
-    <script>
-      /* Load skills dynamically */
-      async function loadSkillsData() {
-        try {
-          const skillsRes = await fetch("./resources/skills.json", {
-            cache: "no-store",
-          });
-          if (!skillsRes.ok) throw new Error("Failed to load skills.json");
+  <dialog class="reader" id="reader" aria-labelledby="reader-title">
+    <div class="reader-head">
+      <h3 id="reader-title"></h3>
+      <button class="reader-close" type="button" id="reader-close">Close</button>
+    </div>
+    <div class="reader-body" id="reader-body"></div>
+  </dialog>
 
-          const skillsData = await skillsRes.json();
+  <script>
+    const $ = (s, r = document) => r.querySelector(s);
+    const esc = (s) => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-          /* ========================
-     CORE COMPETENCIES
-  ========================= */
-          const compContainer = document.getElementById(
-            "competencies-container"
-          );
-          const compTitle = document.getElementById("competencies-title");
-          compContainer.innerHTML = "";
+    /* ---------- Simulated runs ---------- */
+    const runs = {
+      shipment: [
+        ['cmd', 'npx playwright test shipments.spec.ts'],
+        ['pass', '✓ auth › POST /api/v1/auth returns 200 (24ms)'],
+        ['pass', '✓ create › submit shipment payload, SKU EXP-990'],
+        ['fail', '✗ database › shipment status matches the UI'],
+        ['exp', 'Expected: "CONFIRMED"'],
+        ['rec', 'Received: "PENDING"'],
+        ['info', 'The UI showed a cached status. The SQL check read the real row. Trace saved to trace.zip.'],
+        ['pass', '✓ database › status after carrier callback is "CONFIRMED"'],
+        ['sum', '3 passed, 1 bug caught, 0 escaped to production']
+      ],
+      load: [
+        ['cmd', 'jmeter -n -t pos_peak_load_1000_users.jmx -l results.jtl'],
+        ['pass', '✓ ramp up › 1,000 threads over 15s'],
+        ['pass', '✓ login › 0 errors, p90 84ms'],
+        ['fail', '✗ checkout › responds under peak load'],
+        ['exp', 'Expected: 200 OK'],
+        ['rec', 'Received: 504 Gateway Timeout'],
+        ['info', 'Database connection pool exhausted at peak. Pool resized, then rerun.'],
+        ['pass', '✓ checkout › p99 340ms, error rate 0.02%'],
+        ['sum', '3 passed, 1 bug caught, 3.2x throughput after the fix']
+      ],
+      bot: [
+        ['cmd', 'npx playwright test webhook.idempotency.spec.ts'],
+        ['pass', '✓ intent › "bhai parcel kahan hai?" scored 0.94'],
+        ['fail', '✗ webhook › duplicate delivery with the same Idempotency-Key'],
+        ['exp', 'Expected: 1 charge'],
+        ['rec', 'Received: 2 charges'],
+        ['info', 'A retry storm reached a second worker. Fix: dedupe on the key.'],
+        ['pass', '✓ webhook › second delivery returns deduplicated: true'],
+        ['sum', '2 passed, 1 bug caught, 0 duplicate orders']
+      ]
+    };
 
-          skillsData.coreCompetencies.forEach((section, index) => {
-            const card = document.createElement("div");
-            card.className =
-              "backdrop-blur-md bg-gray-800/40 border border-gray-700/50 rounded-2xl p-6 text-left transition-all duration-300 hover:scale-105 hover:bg-gray-800/60 shadow-[0_4px_25px_rgba(0,0,0,0.2)]";
+    const log = $('#log');
+    const replay = $('#replay');
+    let active = 'shipment';
+    let token = 0;
 
-            card.style.transitionDelay = `${index * 0.1}s`;
+    const wait = (ms) => new Promise(r => setTimeout(r, ms));
 
-            card.innerHTML = `
-  <h4 class="text-lg font-semibold text-cyan-300 mb-4 text-center">
-    ${section.category}
-  </h4>
-  <ul class="text-gray-300 text-base space-y-2 pl-5 list-none">
-    ${section.items
-      .map(
-        (i) => `
-        <li class="flex items-start gap-2">
-          <span class="inline-block w-1.5 h-1.5 mt-2 rounded-full bg-cyan-400/80"></span>
-          <span class="leading-relaxed">${i}</span>
-        </li>`
-      )
-      .join("")}
-  </ul>`;
-            compContainer.appendChild(card);
-          });
+    function addLine(kind, text) {
+      const d = document.createElement('div');
+      d.className = `ln ln-${kind}`;
+      d.textContent = text;
+      log.appendChild(d);
+    }
 
-          // Fade-in effect for section and cards
-          const observer = new IntersectionObserver(
-            (entries) => {
-              entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                  entry.target.classList.remove("opacity-0", "translate-y-6");
-                  entry.target.classList.add("opacity-100", "translate-y-0");
-                }
-              });
-            },
-            { threshold: 0.2 }
-          );
-
-          observer.observe(compTitle);
-          observer.observe(compContainer);
-          document
-            .querySelectorAll("#competencies-container > div")
-            .forEach((card) => observer.observe(card));
-
-          /* ========================
-     TECH STACK
-  ========================= */
-          const techContainer = document.getElementById("techstack-container");
-          const techTitle = document.getElementById("techstack-title");
-          techContainer.innerHTML = "";
-
-          skillsData.techStack.forEach((t) => {
-            const pill = document.createElement("div");
-            pill.className = `
-          flex items-center gap-3 bg-gray-800/70 border border-gray-700 
-          rounded-full px-5 py-3 transition-all duration-300 
-          hover:border-cyan-400 
-          hover:shadow-[0_0_10px_rgba(34,211,238,0.3),inset_0_0_8px_rgba(34,211,238,0.15)] 
-          hover:bg-gray-800/90
-        `;
-            pill.innerHTML = `
-          <img src="${t.badgeUrl}" alt="${t.tech}" class="w-6 h-6 object-contain">
-          <span class="text-gray-200 text-base font-medium">${t.tech}</span>
-        `;
-            techContainer.appendChild(pill);
-          });
-
-          const techObserver = new IntersectionObserver(
-            (entries) => {
-              entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                  entry.target.classList.remove("opacity-0", "translate-y-6");
-                  entry.target.classList.add("opacity-100", "translate-y-0");
-                }
-              });
-            },
-            { threshold: 0.2 }
-          );
-
-          techObserver.observe(techTitle);
-          techObserver.observe(techContainer);
-        } catch (err) {
-          console.error("Failed to load skills", err);
-        }
+    async function play() {
+      const mine = ++token;
+      log.innerHTML = '';
+      replay.disabled = true;
+      for (const [kind, text] of runs[active]) {
+        if (mine !== token) return;
+        addLine(kind, text);
+        if (!reduceMotion) await wait(kind === 'fail' ? 800 : kind === 'exp' || kind === 'rec' ? 220 : 430);
       }
+      if (mine === token) replay.disabled = false;
+    }
 
-      /* === PROJECTS SECTION LOADER */
-      const PROJECTS_URL = "./resources/projects.json"; // Change if hosted elsewhere
+    $('#tabs').addEventListener('click', (e) => {
+      const b = e.target.closest('.tab');
+      if (!b) return;
+      active = b.dataset.sim;
+      document.querySelectorAll('.tab').forEach(t => t.setAttribute('aria-pressed', String(t === b)));
+      play();
+    });
+    replay.addEventListener('click', play);
+    play();
 
-      // === Utility: Create element with classes and optional text ===
-      function el(tag, classes, text) {
-        const e = document.createElement(tag);
-        if (classes) e.className = classes;
-        if (text) e.innerHTML = text;
-        return e;
-      }
-
-      // === Utility: Escape HTML to prevent injection ===
-      function escapeHtml(unsafe) {
-        if (!unsafe && unsafe !== 0) return "";
-        return String(unsafe)
-          .replaceAll("&", "&amp;")
-          .replaceAll("<", "&lt;")
-          .replaceAll(">", "&gt;")
-          .replaceAll('"', "&quot;")
-          .replaceAll("'", "&#039;");
-      }
-
-      // === Render a single project card ===
-      function renderCard(project) {
-        const card = el(
-          "div",
-          "proj-card relative w-full bg-gray-800 border border-gray-700 rounded-2xl p-10 text-left"
-        );
-
-        // Decorative dot
-        card.appendChild(el("div", "dot hidden md:block"));
-
-        // Project title
-        const h4 = el(
-          "h4",
-          "text-2xl font-semibold text-cyan-300 mb-3",
-          `${project.icon || "💼"} ${escapeHtml(project.title)}`
-        );
-        card.appendChild(h4);
-
-        // Subtitle (if any)
-        if (project.subtitle) {
-          card.appendChild(
-            el(
-              "p",
-              "text-gray-300 mb-4",
-              `Associated with <span class="text-cyan-400">${escapeHtml(
-                project.subtitle
-              )}</span>`
-            )
-          );
-        }
-
-        // Description (support both string and array)
-        if (Array.isArray(project.description)) {
-          project.description.forEach((p) => {
-            card.appendChild(
-              el(
-                "p",
-                "text-gray-300 text-lg leading-relaxed mb-3",
-                escapeHtml(p)
-              )
-            );
-          });
-        } else if (project.description) {
-          card.appendChild(
-            el(
-              "p",
-              "text-gray-300 text-lg leading-relaxed mb-3",
-              escapeHtml(project.description)
-            )
-          );
-        }
-
-        // Tools / Badges section
-        const toolsWrap = el("div", "mt-4 flex flex-wrap gap-3");
-        if (Array.isArray(project.tools)) {
-          project.tools.forEach((tool) => {
-            const tb = el("div", "tool-badge");
-
-            if (tool.badgeUrl) {
-              const img = document.createElement("img");
-              img.src = tool.badgeUrl;
-              img.alt = tool.name || "badge";
-              img.onerror = () => (img.style.display = "none"); // Hide broken badges
-              tb.appendChild(img);
-            }
-
-            tb.appendChild(el("span", "", escapeHtml(tool.name || tool)));
-            toolsWrap.appendChild(tb);
-          });
-        }
-        card.appendChild(toolsWrap);
-
-        return card;
-      }
-
-      // === Load and Render All Projects ===
-      async function loadProjects() {
-        try {
-          const res = await fetch(PROJECTS_URL, { cache: "no-store" });
-          if (!res.ok)
-            throw new Error("Failed to load projects.json: " + res.status);
-
-          const projects = await res.json();
-          const container = document.getElementById("projects-container");
-          container.innerHTML = ""; // Clear existing content
-
-          // Render each project card
-          projects.forEach((p) => container.appendChild(renderCard(p)));
-
-          // === Scroll Reveal Animation ===
-          const cards = document.querySelectorAll(".proj-card");
-          const revealObserver = new IntersectionObserver(
-            (entries) => {
-              entries.forEach((entry) => {
-                if (entry.isIntersecting) entry.target.classList.add("visible");
-              });
-            },
-            { threshold: 0.15 }
-          );
-          cards.forEach((c) => revealObserver.observe(c));
-
-          // === Active Card Highlight Animation ===
-          const activeObserver = new IntersectionObserver(
-            (entries) => {
-              entries.forEach((entry) => {
-                if (entry.isIntersecting && entry.intersectionRatio > 0.6) {
-                  document
-                    .querySelectorAll(".proj-card.active")
-                    .forEach((x) => x.classList.remove("active"));
-                  entry.target.classList.add("active");
-                }
-              });
-            },
-            { threshold: [0.6] }
-          );
-          cards.forEach((c) => activeObserver.observe(c));
-        } catch (err) {
-          console.error("Failed to load projects:", err);
-          document.getElementById("projects-container").innerHTML =
-            '<p class="text-red-400">Could not load projects. Check projects.json path.</p>';
-        }
-      }
-
-      /* === Certificates SECTION LOADER === */
-      async function loadCertificates() {
-        try {
-          const res = await fetch("./resources/certificates.json");
-          if (!res.ok) {
-            console.error("Failed to load certificates.json:", res.status);
-            document.getElementById("certificates-container").innerHTML =
-              '<p class="text-red-400">Could not load certificates. Check certificates.json path.</p>';
-            return;
-          }
-          const data = await res.json();
-          const certs = data.certificates || [];
-          const container = document.getElementById("certificates-container");
-
-          container.innerHTML = certs
-            .map(
-              (c) => `
-        <div class="certificate-card">
-          <div class="image-box">
-            <img src="${c.logo}" alt="${
-                c.name
-              } logo" onerror="this.style.display='none'" />
-          </div>
-          <div class="certificate-details">
-            <h4>${c.name}</h4>
-            <div class="certificate-meta">
-              <span class="institute">${c.institute}</span>
-              <span class="year">${c.year}</span>
+    /* ---------- Projects ---------- */
+    async function initProjects() {
+      const host = $('#projects');
+      try {
+        const res = await fetch('./resources/projects.json');
+        if (!res.ok) throw new Error(res.status);
+        const list = await res.json();
+        host.innerHTML = list.map(p => `
+          <details class="proj">
+            <summary>
+              <span class="proj-title">${esc(p.title)}</span>
+              <span class="proj-role">${esc(p.role)}</span>
+              <span class="proj-result">${esc(p.metrics.leakage)}</span>
+            </summary>
+            <div class="proj-body">
+              <p>${esc(p.tagline)}</p>
+              <dl class="proj-facts">
+                <div><dt>Run time</dt><dd>${esc(p.metrics.execution)}</dd></div>
+                <div><dt>Coverage</dt><dd>${esc(p.metrics.coverage)}</dd></div>
+                <div><dt>Result</dt><dd>${esc(p.metrics.leakage)}</dd></div>
+              </dl>
+              <div><h4>The risk</h4><p>${esc(p.theChallenge)}</p></div>
+              <div><h4>What I built</h4><p>${esc(p.theSolution)}</p></div>
+              <div><h4>Highlights</h4><ul>${p.highlights.map(h => `<li>${esc(h)}</li>`).join('')}</ul></div>
+              <div><h4>Test excerpt</h4><pre class="code" tabindex="0"><code>${esc(p.testSnippet || '')}</code></pre></div>
+              <p class="proj-role">Built with ${p.tools.map(t => esc(t.name)).join(', ')}.</p>
             </div>
-          </div>
-          ${
-            c.link
-              ? `<a href="${c.link}" target="_blank" rel="noopener" class="view-btn">View Certificate</a>`
-              : ""
-          }
-        </div>`
-            )
-            .join("");
-        } catch (e) {
-          console.error("Failed to load certificates:", e);
-          document.getElementById("certificates-container").innerHTML =
-            '<p class="text-red-400">Could not load certificates. Check certificates.json path.</p>';
-        }
+          </details>
+        `).join('');
+      } catch (err) {
+        host.innerHTML = '<p>Projects could not load. Refresh the page, or open the CV for the full list.</p>';
       }
+    }
 
-      /* Run all dynamic sections after DOM load */
-      document.addEventListener("DOMContentLoaded", () => {
-        loadSkillsData();
-        loadProjects();
-        loadCertificates();
-      });
-    </script>
-  </body>
+    /* ---------- Skills ---------- */
+    async function initSkills() {
+      const host = $('#skills-list');
+      try {
+        const res = await fetch('./resources/skills.json');
+        if (!res.ok) throw new Error(res.status);
+        const data = await res.json();
+        host.innerHTML = data.coreCompetencies.map(g => `
+          <div>
+            <h3>${esc(g.category)}</h3>
+            <ul>${g.items.map(i => `<li>${esc(i)}</li>`).join('')}</ul>
+          </div>
+        `).join('') + `
+          <div class="tools">
+            <h3>Tools I ship with</h3>
+            <p>${data.techStack.map(t => esc(t.tech)).join(', ')}.</p>
+          </div>`;
+      } catch (err) {
+        host.innerHTML = '<p>Skills could not load. Refresh the page, or open the CV for the full list.</p>';
+      }
+    }
+
+    /* ---------- Articles ---------- */
+    const articles = {
+      blindspot: {
+        title: 'The edge case blindspot: why AI tools miss accidental distributed failures',
+        body: `
+          <p class="note">By Aditya More. Research paper.</p>
+          <h4>The probabilistic limit</h4>
+          <p>Language models predict the statistically likeliest next token. Software bugs sit in the opposite place: the lowest-probability tails of a distributed system's state space, often below 0.001%.</p>
+          <h4>Five failure modes AI-generated tests tend to miss</h4>
+          <ul>
+            <li><strong>Database replica lag.</strong> A write to the primary succeeds while a read replica trails by 200ms, so a second tab reads stale data.</li>
+            <li><strong>Idempotency key collisions.</strong> A network timeout triggers concurrent retries that reach duplicate worker threads.</li>
+            <li><strong>Out-of-order webhooks.</strong> A message queue delivers <code>DELIVERED</code> before <code>DISPATCHED</code>.</li>
+            <li><strong>Human micro-concurrency.</strong> 40ms double-clicks and zero-width spaces (<code>\\u200B</code>) in input.</li>
+            <li><strong>Circuit breaker saturation.</strong> HTTP 429 rate limits exhaust the database connection pool.</li>
+          </ul>
+          <p class="note">The full paper is in <code>blogs/01-edge-case-blindspot-ai-testing.md</code>.</p>`
+      },
+      framework: {
+        title: '10x regression automation: a production-grade AI QA framework',
+        body: `
+          <p class="note">By Aditya More. Architecture spec.</p>
+          <h4>Four engines</h4>
+          <ul>
+            <li><strong>Semantic self-healing locators.</strong> Multi-attribute matching plus accessibility roles (<code>getByRole</code>), so tests survive when CSS classes change.</li>
+            <li><strong>Generated boundary fuzzing.</strong> OpenAPI contract fuzzing that injects astral UTF-8 characters and date overflows.</li>
+            <li><strong>Deterministic database invariants.</strong> Direct PostgreSQL checks such as <code>balance = initial − price</code>, where the AI is not allowed to decide pass or fail.</li>
+            <li><strong>Flaky-test root-cause agent.</strong> Reads the Playwright trace (<code>trace.zip</code>) and HAR file, then files the Jira ticket.</li>
+          </ul>
+          <p class="note">Code and the full guide are in <code>blogs/02-10x-ai-regression-automation-framework.md</code>.</p>`
+      }
+    };
+
+    const reader = $('#reader');
+    document.addEventListener('click', (e) => {
+      const b = e.target.closest('[data-article]');
+      if (!b) return;
+      const a = articles[b.dataset.article];
+      $('#reader-title').textContent = a.title;
+      $('#reader-body').innerHTML = a.body;
+      reader.showModal();
+    });
+    $('#reader-close').addEventListener('click', () => reader.close());
+    reader.addEventListener('click', (e) => { if (e.target === reader) reader.close(); });
+
+    /* ---------- Copy ---------- */
+    let copyTimer;
+    document.addEventListener('click', async (e) => {
+      const b = e.target.closest('[data-copy]');
+      if (!b) return;
+      const status = $('#copy-status');
+      try {
+        await navigator.clipboard.writeText(b.dataset.copy);
+        status.textContent = b.dataset.msg;
+      } catch (err) {
+        status.textContent = 'Copy failed. Select the address above instead.';
+      }
+      clearTimeout(copyTimer);
+      copyTimer = setTimeout(() => { status.textContent = ''; }, 2500);
+    });
+
+    initProjects();
+    initSkills();
+  </script>
+</body>
 </html>
-
-
-
-

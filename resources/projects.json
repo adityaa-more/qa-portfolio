@@ -1,139 +1,158 @@
 [
   {
-    "title": "E-Commerce Web Application – Test Automation",
-    "icon": "🛒",
-
-    "description": [
-      "➥ Designed and executed 200+ manual test cases in TestRail covering Functional, Regression, and Integration testing, with Jira for defect tracking and reporting.",
-      "➥ Performed UI, API, and database validation to ensure end-to-end functionality and data consistency.",
-      "➥ Automated core modules — Login, Product Search, Add to Cart, and Checkout — using Selenium WebDriver, Java, and TestNG.",
-      "➥ Implemented Page Object Model (POM) and Data-Driven Testing (DDT) frameworks integrated with Jenkins CI/CD pipelines, generating detailed Allure and Extent Reports.",
-      "➥ Enhanced regression suite efficiency by 40% through reusable scripts, centralized test management, and consistent coverage across builds."
-    ],
-
+    "id": "shipment-app",
+    "title": "Shipment Management Web Application",
+    "role": "Lead Automation Engineer",
+    "badge": "E2E Automation & Database Integrity",
+    "period": "Nimap Infotech",
+    "status": "Production Verified",
+    "statusColor": "emerald",
+    "tagline": "Page Object Model (POM) test architecture in Playwright + TypeScript validating multi-carrier workflows and PostgreSQL state transitions.",
+    "metrics": {
+      "execution": "14 mins (down from 4h)",
+      "coverage": "80+ Critical E2E Scenarios",
+      "leakage": "0% Escape Rate"
+    },
+    "theChallenge": "Complex multi-step shipping workflows involving dynamic international address validation APIs, state-dependent customs declarations, and asynchronous carrier status updates causing orphaned orders in the warehouse database.",
+    "theSolution": "Architected a modular Page Object Model (POM) framework in Playwright with TypeScript. Implemented data-driven boundary matrices for postal codes and parcel weights, and built custom fixtures executing direct SQL queries against PostgreSQL to verify backend state changes independently of UI rendering.",
     "tools": [
-      {
-        "name": "Selenium",
-        "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg"
-      },
-      {
-        "name": "TestNG",
-        "badgeUrl": "https://miro.medium.com/v2/resize:fit:1400/1*4BHz11q6OIX4z8FqtZjjSg.png"
-      },
-      {
-        "name": "Postman",
-        "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg"
-      },
-      {
-        "name": "TestRail",
-        "badgeUrl": "https://cdn.simpleicons.org/testrail/000000"
-      },
-      {
-        "name": "Jenkins",
-        "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg"
-      },
-      {
-        "name": "Java",
-        "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
-      },
-      {
-        "name": "Jira",
-        "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg"
-      },
-      {
-        "name": "Maven",
-        "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/maven/maven-original.svg"
-      },
-      {
-        "name": "Git",
-        "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
-      },
-      {
-        "name": "Allure Reports",
-        "badgeUrl": "https://allurereport.org/public/img/allure-report.svg"
-      },
-      {
-        "name": "Extent Reports",
-        "badgeUrl": "https://extentreports.com/docs/versions/4/java/javadoc/files/bdd/extentbdd/logo.png"
-      }
-    ]
+      { "name": "Playwright", "badgeUrl": "https://playwright.dev/img/playwright-logo.svg" },
+      { "name": "TypeScript", "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+      { "name": "PostgreSQL", "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
+      { "name": "Postman", "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" },
+      { "name": "Git", "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+      { "name": "Jira", "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" }
+    ],
+    "highlights": [
+      "Built resilient POM automation structure for shipment creation, real-time tracking, and multi-carrier status updates.",
+      "Automated positive, negative, and boundary test sets across multi-field international shipment forms.",
+      "Engineered automated SQL assertions validating shipment records directly in the DB to bypass stale frontend caches.",
+      "Integrated trace-based debugging with Playwright Trace Viewer for instantaneous failure diagnosis in CI."
+    ],
+    "testSnippet": "await smartLocator.locate({ label: 'Create Shipment', primarySelector: '#btn-submit-shipment' });\nconst dbRecord = await pgClient.query('SELECT status FROM shipments WHERE tracking_id=$1', [trackingId]);\nexpect(dbRecord.rows[0].status).toBe('CONFIRMED');"
   },
   {
-    "title": "Mercury Banking Application - Manual Testing (Finance Domain)",
-    "icon": "🏦",
-
-    "description": [
-      "➥ Executed 80+ manual test cases in TestRail covering Functional, Regression, and Integration testing across core banking modules like Fund Transfers, Dashboard, and Card Management.",
-      "➥ Validated end-to-end workflows including UI, transaction history, and API responses ensuring accurate account balances and data consistency.",
-      "➥ Managed defect lifecycle in Jira — from logging to closure — collaborating with developers to resolve high-severity bugs.",
-      "➥ Performed negative, usability, and cross-browser testing to ensure smooth performance and responsiveness across Chrome, Edge, and Firefox.",
-      "➥ Delivered detailed test reports and traceability matrix improving overall release quality and test coverage within Agile sprints."
-    ],
-
+    "id": "crm-portal",
+    "title": "Distributor & Retailer CRM Portal",
+    "role": "QA Automation Engineer",
+    "badge": "RBAC & Order Lifecycle Security",
+    "period": "Nimap Infotech",
+    "status": "Production Verified",
+    "statusColor": "emerald",
+    "tagline": "Modular Java & Selenium WebDriver framework covering smoke and regression suites across tiered distributor workflows.",
+    "metrics": {
+      "execution": "28 mins Automated Run",
+      "coverage": "120+ Test Cases",
+      "leakage": "0.01% Defect Leakage"
+    },
+    "theChallenge": "Multi-tier Role-Based Access Control (RBAC) where distributors, retailers, and super-admins have differing SKU discount rights, credit ceilings, and inventory allocations. High risk of race-conditions during simultaneous order placements.",
+    "theSolution": "Developed a modular UI automation framework using Java, Selenium WebDriver, and TestNG. Created reusable page/action methods with explicit synchronized waits to eliminate flaky tests, and pre-seeded test states using REST API endpoints prior to UI verification.",
     "tools": [
-      {
-        "name": "TestRail",
-        "badgeUrl": "https://cdn.simpleicons.org/testrail/000000"
-      },
-      {
-        "name": "Jira",
-        "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg"
-      },
-      {
-        "name": "Postman",
-        "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg"
-      },
-      {
-        "name": "SQL",
-        "badgeUrl": "https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png"
-      },
-      {
-        "name": "Agile",
-        "badgeUrl": "https://static.thenounproject.com/png/603658-200.png"
-      },
-      {
-        "name": "Manual Testing",
-        "badgeUrl": "https://img.favpng.com/0/24/13/test-icon-educational-icons-icon-verified-text-paper-icon-png-favpng-7TP0mZHsnD4vVssLzL8qeSxqH.jpg"
-      }
-    ]
+      { "name": "Selenium", "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" },
+      { "name": "Java", "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+      { "name": "TestNG", "badgeUrl": "https://miro.medium.com/v2/resize:fit:1400/1*4BHz11q6OIX4z8FqtZjjSg.png" },
+      { "name": "Maven", "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/maven/maven-original.svg" },
+      { "name": "REST APIs", "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" },
+      { "name": "Allure", "badgeUrl": "https://allurereport.org/public/img/allure-report.svg" }
+    ],
+    "highlights": [
+      "Designed data-driven test suites validating wholesale pricing matrices and tiered distributor credit limits.",
+      "Covered critical smoke and regression scenarios with zero flakiness across dynamic CRM grids.",
+      "Conducted exploratory testing uncovering edge-case invoice generation bugs during concurrent order updates.",
+      "Delivered 100x clearer test evidence reports with custom Excel logs and structured Allure test outputs."
+    ],
+    "testSnippet": "@Test(dataProvider = \"distributorPricingMatrix\")\npublic void verifyTieredDiscountApplication(String tier, double discountRate) {\n  crmOrdersPage.selectRetailerTier(tier);\n  Assert.assertEquals(crmOrdersPage.getCalculatedTotal(), expectedNetTotal, 0.01);\n}"
   },
   {
-    "title": "Simple Books API – Postman Functional & Regression Testing Project",
-    "icon": "📚",
-
-    "description": [
-      "➥ Designed and validated CRUD operations for endpoints like /books, /orders, and /status to ensure accurate API responses and error handling.",
-      "➥ Performed positive, negative, and boundary testing using Postman Collections and Environments for organized, reusable workflows.",
-      "➥ Implemented data-driven testing with dynamic variables and parameterized request data to enhance test flexibility and maintainability.",
-      "➥ Executed automated regression runs via Postman Collection Runner and Newman, validating response codes, payloads, and JSON schema consistency.",
-      "➥ Logged defects in Jira and maintained detailed test documentation aligned with SDLC and QA best practices."
-    ],
-
+    "id": "whatsapp-bot",
+    "title": "WhatsApp-Powered AI Conversational Bot",
+    "role": "QA Specialist (AI & Webhooks)",
+    "badge": "Conversational NLP & Webhooks",
+    "period": "Nimap Infotech",
+    "status": "Production Live",
+    "statusColor": "cyan",
+    "tagline": "Adversarial conversational testing, intent validation, and asynchronous webhook idempotency verification.",
+    "metrics": {
+      "execution": "150+ Edge Cases",
+      "coverage": "NLP Fallback & Intents",
+      "leakage": "28% Drop-off Reduction"
+    },
+    "theChallenge": "Non-deterministic LLM responses, colloquial slang, multi-language prompt injections, and network packet loss triggering repeated webhook retries that could duplicate e-commerce bot orders.",
+    "theSolution": "Designed an adversarial test matrix testing 150+ edge-case inputs (emojis, zero-width spaces, rapid-fire messaging, out-of-sequence replies). Validated webhook idempotency headers to ensure zero duplicate transactions occurred under network retry storms.",
     "tools": [
-      {
-        "name": "Postman",
-        "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg"
-      },
-      {
-        "name": "Newman",
-        "badgeUrl": "https://res.cloudinary.com/apideck/image/upload/v1626428647/icons/newman.png"
-      },
-      {
-        "name": "Jira",
-        "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg"
-      },
-      {
-        "name": "REST APIs",
-        "badgeUrl": "https://3doptix-wordpress-prod.s3.amazonaws.com/wp-content/uploads/2023/12/REST_API.png"
-      },
-      {
-        "name": "JSON",
-        "badgeUrl": "https://cdn.simpleicons.org/json/000000"
-      },
-      {
-        "name": "STLC",
-        "badgeUrl": "https://static.thenounproject.com/png/3538843-200.png"
-      }
-    ]
+      { "name": "REST APIs", "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" },
+      { "name": "Postman", "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" },
+      { "name": "Python", "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+      { "name": "Webhooks", "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+      { "name": "Jira", "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" }
+    ],
+    "highlights": [
+      "Engineered automated checks verifying smooth fallback to human agents when bot confidence fell below 0.70.",
+      "Simulated packet-loss retries to prove backend idempotency keys stopped duplicate credit deductions.",
+      "Tested edge-case voice note transcriptions and multi-language mixed text (Hinglish / regional terms).",
+      "Prevented high-severity bot lockouts during checkout session timeouts."
+    ],
+    "testSnippet": "// Simulating rapid-fire webhook retry on single order session\nconst res1 = await postWebhook({ event: 'ORDER_INTENT', sessionId: 'WABA-1092', key: 'IDEM-99' });\nconst res2 = await postWebhook({ event: 'ORDER_INTENT', sessionId: 'WABA-1092', key: 'IDEM-99' });\nexpect(res2.status).toBe(200);\nexpect(res2.body.deduplicated).toBe(true);"
+  },
+  {
+    "id": "stock-dashboard",
+    "title": "Real-Time Stock Market Analysis Dashboard",
+    "role": "Frontend & Performance QA",
+    "badge": "WebSocket & High-Frequency Streaming",
+    "period": "Nimap Infotech",
+    "status": "Production Live",
+    "statusColor": "cyan",
+    "tagline": "High-frequency streaming data validation, memory leak profiling, and financial indicator boundary testing.",
+    "metrics": {
+      "execution": "200ms Ticker Latency",
+      "coverage": "Zero Memory Leaks",
+      "leakage": "0 Critical Math Bugs"
+    },
+    "theChallenge": "WebSocket streaming engines pushing real-time ticker prices every 200ms with interactive candlestick charts. Risk of DOM memory leaks, chart freezing during high market volatility, and floating-point math rounding errors on financial indicators (RSI, MACD).",
+    "theSolution": "Conducted 4-hour continuous soak testing to monitor browser heap allocation and garbage collection. Tested WebSocket connection recovery under network throttling, and automated verification of mathematical indicator formulas against verified market benchmark tables.",
+    "tools": [
+      { "name": "Playwright", "badgeUrl": "https://playwright.dev/img/playwright-logo.svg" },
+      { "name": "TypeScript", "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+      { "name": "WebSockets", "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original.svg" },
+      { "name": "Postman", "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" }
+    ],
+    "highlights": [
+      "Monitored browser memory profiles over extended market open hours, eliminating 2 critical DOM memory leaks.",
+      "Validated WebSocket reconnection logic and data packet buffering during simulated 3G/packet drop conditions.",
+      "Verified floating-point rounding precision across technical indicators to guarantee zero calculation discrepancies.",
+      "Ensured instant UI responsiveness across 50+ concurrent live-updating watchlists."
+    ],
+    "testSnippet": "const ws = new WebSocketClient('wss://stream.market.internal/feed');\nws.send({ subscribe: 'NIFTY50' });\nws.on('tick', (tick) => {\n  expect(tick.timestamp).toBeGreaterThan(Date.now() - 500);\n  expect(tick.price).toBeCloseTo(benchmarkFeed.getPrice(), 2);\n});"
+  },
+  {
+    "id": "pos-performance",
+    "title": "POS System Performance & Mobile App",
+    "role": "Performance & Mobile Automation Engineer",
+    "badge": "Apache JMeter & Appium Mobile",
+    "period": "Nimap Infotech",
+    "status": "Stress Tested",
+    "statusColor": "emerald",
+    "tagline": "High-concurrency stress testing up to 1,000 threads with JMeter and automated Android mobile checkout with Appium.",
+    "metrics": {
+      "execution": "1,000 Concurrent Threads",
+      "coverage": "Mobile + API Stress",
+      "leakage": "3.2x Throughput Gain"
+    },
+    "theChallenge": "Peak shopping hours caused severe checkout latency and 504 Gateway Timeouts across 500+ retail store POS terminal registers, threatening retail store operations during festival sale events.",
+    "theSolution": "Designed and executed comprehensive Apache JMeter test plans utilizing Thread Groups, HTTP Request Samplers, Gaussian Random Timers, and Response Assertions simulating 1,000 concurrent checkout sessions. Automated Android tablet barcode scanning and checkout flows using Appium on emulators.",
+    "tools": [
+      { "name": "Apache JMeter", "badgeUrl": "https://jmeter.apache.org/images/logo.svg" },
+      { "name": "Appium", "badgeUrl": "https://appium.io/docs/en/latest/assets/images/appium-logo-horiz.png" },
+      { "name": "Android", "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" },
+      { "name": "Java", "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+      { "name": "Postman", "badgeUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" }
+    ],
+    "highlights": [
+      "Engineered JMeter performance test plans simulating 1,000 virtual users across login, cart, and payment APIs.",
+      "Identified and diagnosed a backend database connection pool exhaustion bottleneck, unlocking a 3.2x throughput increase.",
+      "Automated Android tablet POS login and checkout workflows with Appium and verified responsive UI state handling.",
+      "Summarized latency percentiles (p90, p99), error rates (< 0.05%), and throughput graphs for stakeholder sign-off."
+    ],
+    "testSnippet": "// JMeter Command Line Benchmark Execution\n// jmeter -n -t pos_peak_load_1000_users.jmx -l results.jtl -e -o ./dashboard_report\n// P99 Response Time: 340ms | Error Rate: 0.02% across 1,000 active threads"
   }
 ]
